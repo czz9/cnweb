@@ -52,7 +52,7 @@ CREATE TABLE _news_srv (
   id int(10) unsigned  NOT NULL auto_increment,
   name varchar(40) NOT NULL default '',
   host varchar(40) NOT NULL default '', # host[:port]
-  url varchar(40) NOT NULL default ''
+  url varchar(40) NOT NULL default '',
   PRIMARY KEY  (id)
 ) TYPE=MyISAM;
 
