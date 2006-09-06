@@ -1,4 +1,4 @@
-#  ˝æ›Ω·ππ, add by hightman 08.07
+# Êï∞ÊçÆÁªìÊûÑ, add by hightman 08.07
 # MySQL DataBase.
 # $Id: struct.sql,v 1.2 2003/12/06 11:51:30 czz Exp $
 
@@ -15,7 +15,7 @@ CREATE TABLE _my_dns (
   bbsname varchar(32) NOT NULL default '',
   bbsport smallint(6) unsigned NOT NULL default '23',
   bbsdept varchar(32) NOT NULL default '',
-  bbsonline varchar(32) NOT NULL default 'ƒø«∞…œ’æ»À ˝',
+  bbsonline varchar(32) NOT NULL default 'ÁõÆÂâç‰∏äÁ´ô‰∫∫Êï∞',
   bbslogin varchar(8) NOT NULL default '',
   innhost varchar(32) NOT NULL default '',
   innport smallint(6) NOT NULL default '7777',
@@ -67,63 +67,63 @@ INSERT INTO _news_srv VALUES ('', 'news.neu.edu.cn', '202.118.1.82', '');
 INSERT INTO _news_srv VALUES ('', 'news.tiaozhan.com', '202.117.0.201', '');
 INSERT INTO _news_srv VALUES ('', 'cn.thebbs.org', '211.91.88.132', '');
 
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.admin', 'cn.bbs.*π‹¿Ì”Î∑¢’π', '0');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.admin.announce', 'cn.bbs.*÷ÿ“™π´∏Ê (Moderated)', '0');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.admin.installbbs', 'BBS∞≤◊∞π‹¿ÌŒ¨ª§”Îø™∑¢', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.admin.lists', 'cn.bbs.*∏˜¿‡Õ≥º∆¡–±Ì”Îº«¬º (Moderated)', '0');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.admin.lists.weather', 'cn.bbs.*ÃÏ∆¯‘§±® (Moderated)', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.admin.test', 'cn.bbs.*≤‚ ‘', '0');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.hust', 'ª™÷–ø∆ºº¥Û—ß', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.job', 'ºÊ÷∞”ÎæÕ“µ', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.pku', '±±æ©¥Û—ß', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.sjtu', '…œ∫£ΩªÕ®¥Û—ß', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.study-abroad', '≥ˆπ˙¡Ù—ß', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.tju', 'ÃÏΩÚ¥Û—ß', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.tsinghua', '«Âª™¥Û—ß', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.tsinghua.building1', '«Âª™¥Û—ß1#', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.ysu', '—‡…Ω¥Û—ß', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.zju', '’„Ω≠¥Û—ß', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.zsu', '÷–…Ω¥Û—ß', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.book', 'µÁƒ‘Õº È◊ ¡œ', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.database', ' ˝æ›ø‚', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.embedded', '«∂»Î ΩœµÕ≥', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.graphics', 'Õº–Œ—ß', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.hardware', 'µÁƒ‘”≤º˛', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.lang', '≥Ã–Ú…Ëº∆', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.lang.delphi', 'Delphi”Ô—‘', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.lang.java', 'Java”Ô—‘', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.linux', 'Linux≤Ÿ◊˜œµÕ≥', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.ms-windows', 'Œ¢»ÌWindows≤Ÿ◊˜œµÕ≥', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.multimedia', '∂‡√ΩÃÂºº ı', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.network', 'Õ¯¬Áºº ı', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.security', 'œµÕ≥∞≤»´', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.software', 'µÁƒ‘»Ìº˛', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.unix.development', 'Unixª∑æ≥±‡≥Ã', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.unix.development.kernel', 'Unixƒ⁄∫À±‡≥Ã', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.unix.development.network', 'UnixÕ¯¬Á±‡≥Ã', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.lang.chinese', '∫∫”Ô', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.lang.english', '”¢”Ô', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.literal.ascii-art', 'ASCII“’ ı', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.literal.novel.emprise', 'Œ‰œ¿–°Àµ', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.literal.novel.sci-fiction', 'ø∆ª√–°Àµ', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.literal.original', '‘≠¥¥Œƒ—ß', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.rec.comic', '∂Ø¬˛ø®Õ®', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.rec.drama', 'œ∑æÁœ∑«˙', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.rec.game', 'µÁƒ‘”Œœ∑', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.rec.game.quake', '¿◊…Ò÷Æ¥∏', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.rec.movie', 'µÁ”∞µÁ ”', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.rec.music', '“Ù¿÷∏Ë«˙', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.rec.photo', '…„”∞', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.rec.riddle', '≤¬√’', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.rec.travel', '¬√”Œ', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.sci.astrology', '–«œ‡—ß', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.sci.electronics', 'µÁ◊”—ß', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.soc.market', 'Ωª“◊ –≥°', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.sports.basketball', '¿∫«Ú', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.sports.soccer', '◊„«Ú', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.sports.table-tennis', '∆π≈“«Ú', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.talk.girl', '≈Æ∫¢◊”', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.talk.joke', '–¶ª∞', '1');
-INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.talk.love', 'Ã∏«ÈÀµ∞Æ', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.admin', 'cn.bbs.*ÁÆ°ÁêÜ‰∏éÂèëÂ±ï', '0');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.admin.announce', 'cn.bbs.*ÈáçË¶ÅÂÖ¨Âëä (Moderated)', '0');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.admin.installbbs', 'BBSÂÆâË£ÖÁÆ°ÁêÜÁª¥Êä§‰∏éÂºÄÂèë', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.admin.lists', 'cn.bbs.*ÂêÑÁ±ªÁªüËÆ°ÂàóË°®‰∏éËÆ∞ÂΩï (Moderated)', '0');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.admin.lists.weather', 'cn.bbs.*Â§©Ê∞îÈ¢ÑÊä• (Moderated)', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.admin.test', 'cn.bbs.*ÊµãËØï', '0');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.hust', 'Âçé‰∏≠ÁßëÊäÄÂ§ßÂ≠¶', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.job', 'ÂÖºËÅå‰∏éÂ∞±‰∏ö', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.pku', 'Âåó‰∫¨Â§ßÂ≠¶', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.sjtu', '‰∏äÊµ∑‰∫§ÈÄöÂ§ßÂ≠¶', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.study-abroad', 'Âá∫ÂõΩÁïôÂ≠¶', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.tju', 'Â§©Ê¥•Â§ßÂ≠¶', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.tsinghua', 'Ê∏ÖÂçéÂ§ßÂ≠¶', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.tsinghua.building1', 'Ê∏ÖÂçéÂ§ßÂ≠¶1#', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.ysu', 'ÁáïÂ±±Â§ßÂ≠¶', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.zju', 'ÊµôÊ±üÂ§ßÂ≠¶', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.campus.zsu', '‰∏≠Â±±Â§ßÂ≠¶', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.book', 'ÁîµËÑëÂõæ‰π¶ËµÑÊñô', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.database', 'Êï∞ÊçÆÂ∫ì', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.embedded', 'ÂµåÂÖ•ÂºèÁ≥ªÁªü', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.graphics', 'ÂõæÂΩ¢Â≠¶', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.hardware', 'ÁîµËÑëÁ°¨‰ª∂', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.lang', 'Á®ãÂ∫èËÆæËÆ°', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.lang.delphi', 'DelphiËØ≠Ë®Ä', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.lang.java', 'JavaËØ≠Ë®Ä', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.linux', 'LinuxÊìç‰ΩúÁ≥ªÁªü', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.ms-windows', 'ÂæÆËΩØWindowsÊìç‰ΩúÁ≥ªÁªü', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.multimedia', 'Â§öÂ™í‰ΩìÊäÄÊúØ', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.network', 'ÁΩëÁªúÊäÄÊúØ', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.security', 'Á≥ªÁªüÂÆâÂÖ®', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.software', 'ÁîµËÑëËΩØ‰ª∂', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.unix.development', 'UnixÁéØÂ¢ÉÁºñÁ®ã', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.unix.development.kernel', 'UnixÂÜÖÊ†∏ÁºñÁ®ã', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.comp.unix.development.network', 'UnixÁΩëÁªúÁºñÁ®ã', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.lang.chinese', 'Ê±âËØ≠', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.lang.english', 'Ëã±ËØ≠', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.literal.ascii-art', 'ASCIIËâ∫ÊúØ', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.literal.novel.emprise', 'Ê≠¶‰æ†Â∞èËØ¥', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.literal.novel.sci-fiction', 'ÁßëÂπªÂ∞èËØ¥', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.literal.original', 'ÂéüÂàõÊñáÂ≠¶', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.rec.comic', 'Âä®Êº´Âç°ÈÄö', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.rec.drama', 'ÊàèÂâßÊàèÊõ≤', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.rec.game', 'ÁîµËÑëÊ∏∏Êàè', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.rec.game.quake', 'Èõ∑Á•û‰πãÈî§', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.rec.movie', 'ÁîµÂΩ±ÁîµËßÜ', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.rec.music', 'Èü≥‰πêÊ≠åÊõ≤', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.rec.photo', 'ÊëÑÂΩ±', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.rec.riddle', 'ÁåúË∞ú', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.rec.travel', 'ÊóÖÊ∏∏', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.sci.astrology', 'ÊòüÁõ∏Â≠¶', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.sci.electronics', 'ÁîµÂ≠êÂ≠¶', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.soc.market', '‰∫§ÊòìÂ∏ÇÂú∫', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.sports.basketball', 'ÁØÆÁêÉ', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.sports.soccer', 'Ë∂≥ÁêÉ', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.sports.table-tennis', '‰πí‰πìÁêÉ', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.talk.girl', 'Â•≥Â≠©Â≠ê', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.talk.joke', 'Á¨ëËØù', '1');
+INSERT INTO `_news_grp` (`id`, `name`, `title`, `type`) VALUES ('', 'cn.bbs.talk.love', 'Ë∞àÊÉÖËØ¥Áà±', '1');
 
 # end
