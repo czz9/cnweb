@@ -1,0 +1,209 @@
+Archive-name: cn/bbs/faq
+Posting-Frequency: monthly (1st of each month)
+Last-modified: $Date: 2004/05/31 19:14:14 $
+Version: $Revision: 1.1 $
+URL: http://www.cn-bbs.org/FAQ.html
+Copyright: (c) 2002 cn.bbs.* Administrative Group
+Maintainer: Zhuangzhi Chen <control@cn-bbs.org>
+
+
+Introduction
+============
+This FAQ has been prepared by the cn.bbs.* administrative group to give an
+overview of the hierarchy and with the purpose of helping news admins all
+over the world to configure their news system for the cn.bbs.*
+Usenet-newsgroups (also known as "cn.bbs.* hierarchy").
+
+The cn.bbs.* hierarchy is Usenet Newsgroups that are primarily distributed
+within and to do with China, a country in East Asia.  While the groups are
+mainly for Chinese at home they are also exported and can be read by people
+in other countries if their site gets a feed of them.
+The languages used in cn.bbs.* are Simplified Chinese or English, and if you
+want the majority of people to understand, you need to post in Simplified
+Chinese.  Chinese fonts(GB2312) and keyboard may be needed.
+
+A few config lines added to the configuration files ensure that the
+control messages sent by the group-admin maintainer are easily
+processed with a good degree of security and automation.
+
+This FAQ is also available from:
+	http://bbs.cn.news-admin.org/FAQ.html
+
+Please send your comments and suggestions to:
+control@cn-bbs.org
+
+
+Table of contents
+=================
+1. Recent changes 
+2. Who administers cn.bbs.*?
+3. What does the AG do to administer cn.bbs.*?
+4. Which groups should I take on my site?
+5. How should I configure my newssite for cn.bbs.*?
+6. What is the configuration for moderated groups?
+7. Are there any other sources with useful information?
+8. Where can I find an up-to-date list of cn.bbs.* newsgroups?
+
+
+1. Recent changes
+=================
+- 10/02/2002:
+  First version. Really alpha.
+
+
+2. Who administers cn.bbs.*? 
+============================
+In May 2002, eight persons were accepted to administer the cn.bbs.*
+hierarchy.  Together they are called "Administrative Group" (AG).
+You can reach them at this address:
+	control@cn-bbs.org
+
+At this moment, AG consists of:
+	Zhuangzhi Chen	<czz at cn-bbs dot org>
+	Chenglei Peng	<pcl at cn-bbs dot org>
+	Huapeng Chen	<chp at cn-bbs dot org>
+	Hui Xu      	<xh at cn-bbs dot org>
+	Wei Zhang  	<zw at cn-bbs dot org>
+	Xiang Lv	<lx at cn-bbs dot org>
+	Xiubin Qian	<qxb at cn-bbs dot org>
+	Zhankao Wen	<wzk at cn-bbs dot org>
+	Zhihua Huang	<hzh at cn-bbs dot org>
+
+
+3. What does the AG do to administer cn.bbs.*?
+==============================================
+The AG takes care of sending control messages for creating (newgroup) 
+and removing (rmgroup) cn.bbs.* newsgroups. Control messages issued for 
+cn.bbs.* are archived at: ftp://ftp.isc.org/pub/usenet/control/cn/cn.bbs.*
+
+Discussions about new cn.bbs.* groups takes place in cn.bbs.admin
+The document that describes how to create a new cn.bbs.* newsgroup will 
+be posted by the AG.  A "checkgroups" control message for cn.bbs.* is 
+being posted each 21st day of the month.
+
+
+4. Which groups should I take on my site? 
+=========================================
+That is up to you to decide.  However, if you're taking a "full feed",
+then you should accept the periodic control messages for the cn.bbs.*
+groups issued by the AG KeyMaster (aka "control authority"), and by nobody
+else.
+
+
+5. How should I configure my newssite for cn.bbs.*? 
+===================================================
+The AG KeyMaster uses PGP to digitally sign the newgroup, rmgroup and 
+checkgroups control messages.
+
+If you are using the PGP, you can have the newsserver automatically handle
+the KeyMaster control messages.
+
+The PGP public key for the cn.bbs.* hierarchy can also be downloaded from
+the following URL: http://www.cn-bbs.org/pubkey-cn.bbs.admin.announce
+
+Type Bits/KeyID    Date       User ID
+pub  1024/D9662289 2002/08/04 cn.bbs.admin.announce
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: 2.6.3ia
+
+mQCNAz1Ni60AAAEEAMLeta8FnOvjGdC+FjHGapnBD0li/ODyNWbI5w9l6KyZj4rV
+SVS+P3hpEL58S0cYVXfx1g9q5VuawMcDM1D0wwI74G7oBszq+aHrY8vsXabLkYV9
+U3xJywXAF+Yl2JYBD6CSBQnKy3UImLO8Hke/T62lRYkxQCdZqJj5a0vZZiKJAAUT
+tBVjbi5iYnMuYWRtaW4uYW5ub3VuY2WJAJUDBRA9TYutmPlrS9lmIokBARziA/9t
+zBku4vIfOldeEXzydMdKxQadetS3OnlCca4fZ85oAQQmEsPrI/6DrhO7GcPBGIpJ
+4Rar6DRrLbBf1aZI35qqRnP0UeL0gVLim4vZd6nY9COuP8mYUu1vf1QHB+TCp4iH
++yBI0I6qm7LZIj2Q3XtvS5oQsRe4NYP1pCBA1jGplg==
+=YJgN
+-----END PGP PUBLIC KEY BLOCK-----
+
+For technical details, see: 
+ftp://ftp.isc.org/pub/pgpcontrol/README 
+or 
+ftp://ftp.isc.org/pub/pgpcontrol/README.html 
+
+  CONFIGURATION
+  -------------
+
+Please remember to add the AG PGP public key to your newsservers pgp ring.
+(http://www.cn-bbs.org/pubkey-cn.bbs.admin.announce).
+
+Cnews [with PGP]
+-----
+Add the following to your "controlperm" CNews configuration file:
+
+cn.bbs control@cn-bbs.org cnr p cn.bbs.admin.announce
+
+Cnews [without PGP (strongly discouraged)]
+-----
+Add the following to your "controlperm" CNews configuration file:
+
+cn.bbs control@cn-bbs.org nr y
+
+DNEWS [with PGP]
+-----
+Add the following to your "control.conf" DNEWS configuration file :
+
+newgroup:control@cn-bbs.org:cn.bbs.*:doit,pgp
+rmgroup:control@cn-bbs.org:cn.bbs.*:doit,pgp
+checkgroups:control@cn-bbs.org:cn.bbs.*:doit,pgp
+
+DNEWS [without PGP (strongly discouraged)]
+-----
+Add the following to your "control.conf" DNEWS configuration file :
+
+newgroup:control@cn-bbs.org:cn.bbs.*:doit
+rmgroup:control@cn-bbs.org:cn.bbs.*:doit
+checkgroups:control@cn-bbs.org:cn.bbs.*:doit
+
+INN [with PGP]
+---
+Add the following to your "control.ctl" INN configuration file:
+
+checkgroups:control@cn-bbs.org:cn.bbs.*:verify-cn.bbs.admin.announce
+newgroup:control@cn-bbs.org:cn.bbs.*:verify-cn.bbs.admin.announce
+rmgroup:control@cn-bbs.org:cn.bbs.*:verify-cn.bbs.admin.announce
+ [three lines, might be splitted on old terminals]
+
+INN [without PGP (strongly discouraged)]
+---
+Add the following to your "control.ctl" INN configuration file :
+
+checkgroups:control@cn-bbs.org:cn.bbs.*:doit
+newgroup:control@cn-bbs.org:cn.bbs.*:doit
+rmgroup:control@cn-bbs.org:cn.bbs.*:doit
+
+
+6. What is the configuration for moderated groups? 
+==================================================
+Normally, postings to a moderated newsgroup are being sent to a server that
+keeps an up-to-date list of moderators.  For the cn.bbs.* hierarchy, the
+server used is: moderators.isc.org
+
+You can use:
+
+C News (file "mailpaths")
+------
+cn.bbs.* %s@moderators.isc.org
+
+INN (file "moderators")
+---
+cn.bbs.*:%s@moderators.isc.org
+
+  Please use "moderators.isc.org" instead of "moderators.uu.net", 
+  because an email to an cn.bbs.* moderator will only be forwarded 
+  correctly through moderators.isc.org
+
+
+7. Are there any other sources with useful information?
+=======================================================
+The following URL contains all relevant links for the cn.bbs.*
+hierarchy: http://bbs.cn.news-admin.org (in different languages)
+
+
+8. Where can I find an up-to-date list of cn.bbs.* newsgroups?
+==============================================================
+On each 21st day of the month, an actual list is being posted in 
+"cn.bbs.admin.announce".  The checkgroups control message (see subject 5)
+is posted there, too, but normally only shows up in the pseudo-newsgroups
+"control" or "control.checkgroups".

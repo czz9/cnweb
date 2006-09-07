@@ -1,0 +1,162 @@
+Archive-name: cn/bbs/newgroups
+Posting-Frequency: semimonthly (1st and 16th of each month)
+$Id: NEWGROUP,v 1.1 2004/05/31 19:14:14 czz Exp $
+
+本 FAQ 是针对希望在 cn.bbs.* 架构下开设新的新闻组的版主及转信管理员。每
+月一日和十六日自动贴于 cn.bbs.admin 和 cnbbs.admin.manager 组，请尽量参
+考最新版本。
+
+任何意见和建议，请联系<control@cn-bbs.org>.
+
+一. 如何在 cn.bbs.* 架构下申请新的新闻组？
+   0) 请先准备：
+      a) 考虑真的有必要吗？
+      b) 请在新组成立后，负起引导主题、维持秩序的责任。
+      c) 确定已有 BBS 站愿意成立对应版并转信。我们希望至少获得两个 BBS
+         站转信管理员的同意。最好先找好版主人选。
+      d) 考虑是否需要对某些 BBS 站的转信资格进行限制。
+
+   1) 确定要申请之后，请准备一份提案(可参考附录)，内含 
+      a) 英文组名，如 "cn.bbs.campus.tsinghua"；
+      b) 中文组名，如 "清华大学"；
+      c) 对应版名，如 "Tsinghua"；
+      d) 提案人，必须是 cn.bbs.* 正式成员之版主或转信管理员；
+      e) 成立理由，针对 0) 中三点详细阐述；
+      f) 讨论主题与范围；
+      g) 待转信站列表，必须是 cn.bbs.* 正式成员(请支持者用 r 模式回复)；
+      h) 适用于本组的章程(可选，详见 二.5. 说明)。
+
+   2) 将提案发表至 cnbbs.admin.manager (可能在 BBS 站内的 cnBM 版)。
+
+   3) 收集各方意见与连署名单之后，连署终止。并将提案发表至 cn.bbs.admin
+      (可能在 BBS 站内的 cnAdmin 版)。此提案在张贴至 cn.bbs.admin 时，最
+      好采用 "[PROPOSAL] 申请成立 cn.bbs.xxxx" 做为标题。
+
+   4) 若提案在 cn.bbs.admin 贴满一周，无反对意见后，将由 cn.bbs.* 管理小
+      组发送控制指令给各 news server 成立新的新闻组。
+
+   5) 新组成立后，会在 cn.bbs.admin，cn.bbs.admin.announce，以及新成立的
+      新闻组内公告。
+
+   6) 请提案人联系各 BBS 站转信管理员加入新组。
+
+二. 处理原则
+
+  1. 讨论主题必需在 CERNET 各项制度规定的范围之内。
+
+  2. 提案必须留在 cn.bbs.admin 至少一星期以上。
+
+  3. 慎重提出的提案，管理小组都会慎重考虑，提案是用于说服管理小组与各 BBS
+     站，所以一堆简单支持的连署回复比不上几篇有内容的建议和意见。
+
+  4. 管理小组只受理在 cn.bbs.admin 提出的提案。
+
+  5. 各个新闻组如果需要限制加入站点的资格，可以依据《cn.bbs.*章程》制定适
+     用于特定组的章程，并提出一个易于操作的办法(如投票等)。提案人应当在申
+     请时提交此章程，并在新组开出后负责章程的执行。
+
+三. 关于 cn.bbs.* 的相关资料
+
+   1) cn.bbs.* 的管理小组共约 10 人，设主管一名
+      control@cn-bbs.org
+
+   2) cn.bbs.* 新闻组的传播范围遍及十多个国家，读者群估计有数十万人。
+
+   3) cn.bbs.* 的部分文章，可以从 Google 的
+      http://groups.google.com/groups?group=cn.bbs
+      取得。
+
+附录:
+
+一个提案的范例...
+
+##        英文组名: cn.bbs.comp.xml   
+##        中文组名: 可扩展置标语言
+##        对应版名: XML
+##提案人：
+##        microweb@SMTH			BBS 水木清华站 XML 版版主
+##
+##成立理由：
+##        a.必要性
+##        今年正值 XML 技术诞生 5 周年，回顾过去，XML 在国内有了长足的发
+##展，无论是应用还是研究方面都形成了一批专门从事 XML 技术研究的网友，在
+##水木 XML 版也有几年的历史了。
+##        但是，由于 XML 本身技术比较宽泛，研究课题和应用都很多，同时，
+##从事 XML 技术研究和开发的网友相对较少，却又分布在各个 bbs 站点，致使版
+##面的讨论氛围不够活跃。并且由于不同 bbs 之间的交流不方便，使得讨论都集
+##中在一个小范围内，不能形成大的影响。
+##        为加强各站之间联系，促进不同地区 XML 研究者之间的交流(因为不同
+##的人上 bbs 的习惯不尽相同)，有必要通过转信这一手段。同时，这也可以扩大
+## XML 在国内的影响，有利于这项技术的普及和深入。
+##        而目前 cn.bbs.* 架构下还没有关于 XML 的新闻组，因此申请开设新
+##组。
+##        b.准备工作
+##        阅读了转信的相关文档，并在版面进行了宣传；
+##        待转信站对应版面均已设有版主，且秩序良好；
+##        与其他站的对应版面版主进行了协商，已取得部分支持(附后)。
+##        c.管理建议
+##        待新组开出后，将配合各转信站版主，加强管理，避免大量灌水文章；
+##        充分利用 cnBM ，协调不同转信站之间的关系，保证信息的合理利用；
+##        集合各个版面的中坚力量，进行一些单个版面难以完成的工作。
+##
+##讨论主题与范围：
+##        以与 XML 相关的有一定深度的学术课题研究和新应用讨论为主，分为
+## 5 个大的主题：
+##        a.XML 为基础的数据发布技术
+##		如：cocoon等
+##        b.Web Services相关
+##		如：SOAP、WSDL、UDDI等
+##        c.Semi-Structured data/XML DB
+##		如：XML Management System等
+##        d.Web Semantic/Web ontology
+##        e.经过 XML 增强后的新技术如 XHTML 的高级主题
+##        另外，也非常欢迎其他的一些由 XML 衍生出来的新的应用技术的讨论(
+##如：XUL、XWT等)。鼓励多发与以上主题相关的业界新闻和 XML 网络资源的文章。
+##        a.倡导原创
+##        b.鼓励提供中文化的资料，及时转载有价值的外文资料
+##
+##待转信站列表：(此部分只需在转贴至 cn.bbs.admin 时补上)
+##        1.WestWind.cn-bbs.org 蜀道西风 (SYSOP: nuclear)
+##        2.SCU.cn-bbs.org 四川大学蓝色星空站 (SYSOP: lotusin)
+##        3.bbs.sjtu.edu.cn 饮水思源 (SYSOP: tramp)
+##        4.smth.org BBS 水木清华站 (BM: microweb)
+##        5.bbs.ipcn.org 自由世界 (SYSOP: windtear)
+##        6.bbs.feeling.smth.org 温馨小屋 (BM: Czz)
+##
+##<附件一>：本文在 cnbbs.admin.manager 张贴期间支持名单(含版主及转信管理员)
+##
+##连署人：(请支持者用 r 模式回复，谢谢配合)
+##        1. nuclear@WestWind			蜀道西风 转信管理员
+##        2. lotusin@SCU			四川大学蓝色星空站 转信管理员
+##        3. tramp@SJTU				饮水思源 转信管理员
+##        4. passed@SMTH			BBS 水木清华站 转信管理员
+##        5. windtear@Windtear			自由世界 转信管理员
+##        6. Czz@Feeling			温馨小屋 XML 版版主
+##
+##<附件二>：本文在 cnbbs.admin.manager 张贴期间相关意见汇总
+##
+##1.Czz@Feeling (认真干活) wrote:
+##是叫 cn.bbs.comp.xml 还是 cn.bbs.comp.lang.xml ？
+##参考已有的：
+##	cn.comp.lang.xml
+##	comp.text.xml
+##	cz.comp.lang.xml
+##	de.comp.text.xml
+##	fj.comp.xml
+##	fr.comp.text.xml
+##	free.it.lang.xml
+##	japan.comp.lang.xml
+##
+##2.microweb@SMTH (深呼吸，闭好你的眼睛) wrote:
+##由于 XML 当前的主要研究包括了 text 方面如 xhtml、doc managerment
+## XML database、WebServices、Semantic Web，单纯使用 comp.lang.xml 或者
+## comp.text.xml 都比较片面，因此建议为 comp.xml
+##
+##3.Czz@Feeling (认真干活) wrote:
+##还有，是叫"可扩展置标语言"还是"可扩展标记语言"？
+##
+##4.microweb@SMTH (深呼吸，闭好你的眼睛) wrote:
+##可扩展置标语言，官方的 xml.org.cn 的叫法
+##
+##5.nuclear@WestWind (金属教父) wrote:
+##  觉得非常有必要。

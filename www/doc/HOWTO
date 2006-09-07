@@ -1,0 +1,242 @@
+Archive-name: cn/bbs/howto
+Posting-Frequency: monthly (1st of each month)
+$Id: HOWTO,v 1.8 2005/03/14 06:17:17 czz Exp $
+
+   ★cn.bbs.* 转信 FAQ：
+
+     本FAQ是针对希望加入cn.bbs.*转信的中国bbs的转信管理员。每月一日自动
+     贴于cn.bbs.admin和cn.bbs.admin.announce组，请尽量参考最新版本。
+
+     任何意见和建议，请联系<control@cn-bbs.org>.
+
+     Q1：什么是cn.bbs.*？
+     A1：cn.bbs.*计划是专为中国bbs转信服务的，遵守中国教育和科研计算机网
+     的各项规定。
+     cn.bbs.*计划目前拥有12台news server，88个bbs站台，116个组，传播范围
+     遍及十多个国家。
+
+     Q2：如何加入cn.bbs.*？
+     A2：目前各个news server上的cn.bbs.admin和cn.bbs.admin.test组都是开
+     放的。请首先使用cn.bbs.admin.test进行测试，成功后在
+     http://cn-bbs.org/ 申请权限。
+
+     Q3：应该使用哪个版本的innbbsd呢？
+     A3：对于大陆目前广泛使用的Firebird(包括3.0K和FB2000)及Maple，我们推
+     荐使用innbbsd-0.50beta-5F版本进行innbbsd的安装，您可以在您所采用的
+     bbs源码中找到它。
+     各个版本的bbs源代码请到ftp://ftp.feeling.smth.org/下载，我们也欢迎您
+     上载最新的版本。
+
+     Q4：如何安装innbbsd呢？
+     A4：请仔细阅读innbbsd自带的Readme文件，安装过程中绝大多数的问题都可
+     以获得解决。
+     另外，根据 zhbig@smth.org 的建议，请修改 bbslink.c 以下部分，来支持
+     tin、OE 等 news client 对简体中文的识别:
+     找到 post_article 函数，找到下面这段代码
+     if (NEWSFEED == REMOTE) {
+       ...
+     } else {
+       ...
+       fprintf(NNTPwfp, "Message-ID: <%s>\r\n", sover->msgid);
++      fprintf(NNTPwfp, "Mime-Version: 1.0\r\n");
++      fprintf(NNTPwfp, "Content-Type: text/plain; charset=\"gb2312\"\r\n");
++      fprintf(NNTPwfp, "Content-Transfer-Encoding: 8bit\r\n");
+       fprintf(NNTPwfp, "X-Filename: %s/%s\r\n", sover->board, sover->filename);
+     }
+     增加如上部分，然后重新编译安装 innbbsd 。
+
+     Q5：应该转哪些版面呢？
+     A5：转信会给版面带来一定的冲击，希望管理员在转信之前充分考虑，既能够
+     跟众多的bbs交流，又能够保持自己的特色。不鼓励将所有版都纳入转信。
+     同时，一旦加入转信，就不应该阻止交流的正常进行，比如单向转信、一版转
+     多组以及修改S/L的默认配置等。
+     作为转信的最小配置，建议至少开设以下版面:
+        cnAdmin         [转信] ● cn.bbs.*管理及发展事务
+        cnAnnounce      [转信] ● cn.bbs.*重要公告(只读)
+        cnBM            [转信] ● cn.bbs.*版(组)务交流
+        cnLists         [转信] ● cn.bbs.*各类统计列表与记录(只读)
+        cnTV            [转信] ● 电视节目预告(只读)
+        cnWeather       [转信] ● 天气预报(只读)
+        cnTest          [转信] ● cn.bbs.*测试区
+
+     Q6：如何书写bbsname.bbs、newsfeeds.bbs、nodelist.bbs和active文件呢？
+     A6：各项具体说明可参看innbbsd中的Readme，这里仅以"温馨小屋"的配置文
+     件(使用主动式转信，被动转信后面会介绍)为例，其中的站名部分必须按照
+     实际情况加以修改，以免和已有的站重复。
+     bbsname.bbs:
+
+     Feeling
+
+     newsfeeds.bbs:
+
+     cn.bbs.admin       cnAdmin cnnews
+     cn.bbs.admin.announce      cnAnnounce      null
+     cn.bbs.admin.lists cnLists null
+     cn.bbs.admin.lists.weather	cnWeather	null
+     cn.bbs.admin.test  cnTest  cnnews
+     cnbbs.admin.manager        cnBM    cnnews
+
+     nodelist.bbs:
+
+     Feeling    bbs.feeling.smth.org     IHAVE(7777)     温馨小屋
+     cnnews     news.zixia.net   POST(119)       cn.bbs.*新闻组
+
+     cnnews.active:
+
+     cn.bbs.admin       0000000000      0000000001      y
+     cn.bbs.admin.announce      0000000000      0000000001      y
+     cn.bbs.admin.lists 0000000000      0000000001      y
+     cn.bbs.admin.lists.weather	0000000000      0000000001      y
+     cn.bbs.admin.test  0000000000      0000000001      y
+     cnbbs.admin.manager        0000000000      0000000001      y
+     control.cancel     0000000000      0000000001      y
+
+     newsfeeds.bbs中的null表示不转出。
+     cnnews.active中加入control.cancel组的目的在于跨站砍信。
+
+     Q7：如何执行innbbsd呢？
+     A7：运行innbbsd之后，在innd目录下执行
+        ./bbsnnrp news.zixia.net cnnews.active
+     进行转入，执行
+        ./bbslink -v ~bbs
+     进行转出。
+     也可以加入crontab中，每隔一定时间自动执行。如写成:
+0,15,30,45 * * * * ~bbs/innd/bbsnnrp news.zixia.net cnnews.active>/dev/null 2>&1
+* * * * * ~bbs/innd/bbslink ~bbs >~bbs/tmp/portnum
+
+     Q8：如何增加全国十大热门话题？
+     A8：本方法由flyriver@happynet.org提供，援引如下:
+        1. 创建一个新文件，叫做 newsday.sh，放在 ~bbs/bin 中，内容如下:
+        ( CERNET 以外，请使用 http://top2.cn-bbs.org/day ，
+        若需 BIG5 版本，请使用 http://top2.cn-bbs.org/day.big5 )
+            #!/bin/sh
+            ( cd tmp; wget -q http://top.cn-bbs.org/day )
+            if [ -f tmp/day ]; then
+                mv -f tmp/day 0Announce/bbslist/newsday
+            fi
+        加上 newsday.sh 的可执行权限，通过 chmod +x newsday.sh 即可。然
+        后把 newsday.sh 的执行加到 crontab 里面，每小时执行一次即可，例
+        如
+            5 * * * * (~bbs/bin/newsday.sh)
+        2. 修改 BBS 系统的代码
+        (1) 修改头文件 permissions.h
+        这里以 FB2000v1219 为例(FB2000v1126是一样的)。
+        编辑 permissions.h，找到 #define DEF_* 系列，如果这部分没有修改
+        过的话，最后一行应该是
+            #define DEF_NOTHIDEIP	0x10000000
+        接着找到
+            #define NUMDEFINES	29
+        它的意思是 BBS 支持 29 个可定制选项，在个人工具箱，个人参数设定
+        里面显示出来的就是 29 项。
+        紧接着
+            #define DEF_NOTHIDEIP	0x10000000
+        添加下面一行：
+            #define DEF_NEWSTOP10	0x20000000
+        然后把
+            #define NUMDEFINES	29
+        改为
+            #define NUMDEFINES	30
+        再找到 user_definestr[] 数组，紧接着
+            "隐藏自己的 IP",	/* DEF_NOTHIDEIP */
+        添加下面一行：
+            "进站时观看全国十大排行榜",	/* DEF_NEWSTOP10 */
+        至此 permissions.h 已经修改完毕，保存一下吧。:)
+        注意：
+        1. 由于 int 型只有 32 位，而一个定制选项要占用一位，所以最多只
+        能有 32 个定制选项。因此如果你的代码里面已经是
+            #define NUMDEFINES	32
+        我想你应该比我清楚该怎么做的。:)
+        2. 如果你以前已经修改过这部分可定制选项，上面这段对你来说有点太
+        罗嗦了。:)
+        (2) 修改 main.c
+        找到 user_login() 函数, 找到下面这段代码
+            show_statshm("etc/posts/day", 1);
+            refresh();
+            move(t_lines - 2, 0);
+            clrtoeol();
+            prints("[1;36m☆ 这是您第 [33m%d[36m 次拜访本站，上次您是从 [33m%s [6m 连往本站。\n", currentuser.numlogins + 1, currentuser.lasthost);
+            prints("☆ 上次连线时间为 [33m%s[m ", ctime(&currentuser.lastlogin));
+            igetkey();
+        它实际就是用于显示本站十大热门话题的，紧接着 igetkey(); 加上
+            if (DEFINE(DEF_NEWSTOP10))
+            show_help("0Announce/bbslist/newsday");
+        然后重新编译安装 bbsd。
+        3. 路径问题
+        0Announce/bbslist 这个目录名可能各个站不太相同，请自行修改。
+        4. 把全国十大放入本站各类数据统计中
+        编辑 0Announce/bbslist/.Names 文件，把newsday 加进去，例如
+            Name=全国十大热门话题                       BBS系统
+            Path=~/newsday
+            Numb=16
+            #
+
+     Q9：什么是被动式转信？
+     A9：建议转信bbs尽量使用被动式转信，但是测试初期请先使用主动式转信。
+     关于被动式转信和主动式转信的区别，innbbsd-0.50beta-5F的README文件有
+     较详细的阐述，援引如下:
+
+        A). 主动式 (client gateway) 和被动式 (server gateway) 转信的比较
+        
+        目前与 tw.bbs 转信的 BBS 站所用之程式依照传信的方式可区分为两类:
+        1. 主动取信的, 或称为 client gateway.
+                一般经由 modem 电话拨接的 BBS站多用此方式主动以 news
+                client的身份向 news server 定时读取.
+                NSYSU Formosa BBS 所用之转信程式是一种 client gateway.
+        2. 被动等信的, 或称为 server gateway.
+                BBS 站跑一个 server, 只能被动地等待上游站喂送,是一般news
+                server 用来传送 news article 的方法.
+                Phoenix BBS 所附之 in.bntpd 就是一种 server gateway.
+
+        这两种 gateway 各有优缺点. 分析如下:
+        1. client gateway 必须 maintain 读取的记录, 与一般news reader 的
+        newsrc 类似.  client 自主性高, 可以主动决定何时去取信, 要那些讨
+        论区.
+        2. server gateway 无须 maintain 读取记录, 只要被动地等待上游站把
+        新信送过来. server gateway 比较难自主, 送信时机和喂送之讨论区.由
+        上游站设定.
+
+        BBS 站必须衡量需求和维护之困难度, 以决定采用那一种 gateway.
+        1. 收取之讨论区多寡.
+                若不多, client gateway 比较合适. 如果很多, 应考虑采用
+                servergateway.
+                读取记录不好维护, 尤其是 news server 定期会有 renumber
+                active的动作, client 可能误判.
+        2. 是否想连线同步转信, 某站一有新信送出, 其他站马上可看到.这个只
+        能由 server gateway 达成.
+        3. 是否要跨站砍信. 若由 client gateway 来做比较难.如果要做到能接
+        受别站送来的砍信讯息,
+                a. 还要收取一个 称为 "control" 或 "control.cancel" 的
+                news讨论区.通常这个区的量相当大, 可能远大于 BBS 站想转的
+                正常区.
+                b. 记录 artno 与 BBS article path 的对应关系, 再 stat
+                news server.
+                c. extract header (xhdr Control) server gateway 不用再收
+                额外的讨论区即可跨站砍信.
+        4. 个人使用或使用者不多的 BBS 站建议采用 client gateway.用户多的, 
+        转信不正常影响比较大,建议采用 server gateway.
+        5. 想要自主性高的用 client gateway.想要有紧密相连, 有整体连成一
+        线感觉者用 server gateway.
+
+     作为 cn.bbs.*，我们建议所有 BBS 尽可能采用被动式转信，主动式转信仅用
+     于测试阶段，并只在少数 news 和少数 group 上开放。
+
+     Q10：如何使用被动式转信呢？
+     A10：首先请确认主动式转信一切正常，并已经通过申请(见Q2)，且已经增
+     加全国十大热门话题(见Q8)。
+     然后在 http://cn-bbs.org/ 提出申请。
+
+     如果申请通过的话，请修改nodelist.bbs，将cnnews对应行改成:
+
+     cnnews     166.111.160.80  IHAVE(119)       cn.bbs.*新闻组
+
+     ( 其中 166.111.160.80 将根据具体情况进行分配，具体 IP 请参考转信配
+     置提示。 )
+     重新运行innbbsd(或者reload一次)，就可以了。
+     bbslink 设置与 A7 相同。
+     同时别忘了从crontab中删掉bbsnnrp，bbsnnrp和cnnews.active已经可以不
+     再使用了。
+
+     Q11：我还是搞不定，怎么办？
+     A11：请确定已经认真阅读了innbbsd自带的文档。
+     还有其它的问题可以使用news reader软件(如Agent，Outlook Express)
+     在cn.bbs.admin组询问，或者在已转信bbs的cnAdmin版(或类似版)中进行讨论。
