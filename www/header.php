@@ -22,9 +22,9 @@
 	<div class="menutitle">文档</div>
 	<ul>
 		<li><a href="index.php?c&amp;file=charter">管理章程</a></li>
-		<li><a href="index.php?c&amp;file=howto">配置方法</a></li>
-		<li><a href="index.php?c&amp;file=manual">转信FAQ</a></li>
-		<li><a href="index.php?c&amp;file=newgroup">新组申请办法</a></li>
+		<li><a href="index.php?c&amp;file=howto">技术手册</a></li>
+		<li><a href="index.php?c&amp;file=manual">版主手册</a></li>
+		<li><a href="index.php?c&amp;file=newgroup">开组须知</a></li>
 		<li><a href="index.php">English Version</a></li>
 	</ul>
 	<div class="menutitle">新闻组数据</div>
