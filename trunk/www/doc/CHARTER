@@ -1,0 +1,182 @@
+Archive-name: cn/bbs/charter
+Posting-Frequency: monthly (1st of each month)
+$Id: CHARTER,v 1.1 2004/05/31 19:14:14 czz Exp $
+
+                               cn.bbs.* 管理章程
+
+第一章 总  则
+
+    第一条：为了便于管理转信事务，协调参与转信的各 BBS 之间的关系，促进新闻组转
+            信的有序、互利、健康发展，特制定本管理章程。
+    第二条：本章程依据『中国教育和科研计算机网管理办法』、『中国教育和科研计算
+            机网安全管理协议』及『中国教育和科研计算机网用户守则』制定。
+    第三条：cn.bbs.* 新闻组转信由 cn.bbs.* 转信管理委员会管理，下设转信协调委员
+            会。
+
+第二章 cn.bbs.* 管理机构组成、产生方式及职责
+
+    第一条：cn.bbs.* 转信管理委员会常设人员 5～10 人，即转信管理小组，由推荐产生
+            。设主管一名，负责召集委员，主持日常工作。
+    第二条：cn.bbs.* 转信协调委员会由以下两部分组成：
+            1.  cn.bbs.* 转信管理委员会委员为协调委员会常务委员，主持协调工作，
+                执行处罚决议。分工详见《cn.bbs.* 管理小组成员列表》以及
+                《cn.bbs.* 管理小组分工》。
+            2.  所有参与 cn.bbs.* 新闻转信 BBS 站的转信管理员自动成为转信协调委
+                员会委员。在 cn.bbs.admin 中有投诉案提出后，各转信协调委员会委
+                员有对投诉进行表态的责任。
+
+第三章 投诉与协调
+
+  第一节 投诉办法
+
+    第一条：为了保障 cn.bbs.* 新闻组的正常秩序，协调各转信 BBS 站的要求，为大家
+            提供一个积极向上、有序的讨论环境，需要协调转信 BBS 的行为，对违反规
+            定的 BBS 给予一定的处罚。
+    第二条：任一参与转信的 BBS 站均可由该站的转信管理员提出投诉，投诉的范围包括
+            1. cn.bbs.* 新闻组某一组的状况脱离了该组的主旨和方向。
+            2. 参与转信的 BBS 站出现干扰新闻组的正常秩序的行为，如灌水、大量与
+               组无关或者无用的文章。
+            3. 出现违反互联网管理规定以及国家法律、法规的文章，如反动、色情、煽
+               动性质的文章或者商业广告等。
+    第三条：转信 BBS 站由转信管理员代表其站务提起投诉，张贴在 cn.bbs.admin 组。
+            为了您的投诉能够得到及时准确的处理并便于 cn.bbs.* 转信协调委员会工
+            作，请按照以下格式进行，否则管理小组可以不予受理：
+  
+            标题：以[投诉]开头加简要的投诉内容作为标题
+            内容：
+                I  . [投诉说明]
+                II . [投诉举证]
+
+            对投诉格式的说明：
+                [投诉说明]项应说明投诉的缘由、目的等。
+                [投诉举证]项应列举投诉的例证，便于协调委员会调查分析。
+
+  第二节 协调处理过程
+
+    第一条：cn.bbs.* 新闻组转信协调委员会根据转信 BBS 站提出的投诉，委派管理委
+            员会相关负责人进行联系和调查,并尽可能向被投诉 BBS 站的转信管理员发
+            出通知信件。
+    第二条：cn.bbs.admin 组中张贴投诉案后，被投诉的相关 BBS 站管理员应于 24 小
+            时内在 cn.bbs.admin 组做出反应，进行解释说明或者申辩。
+    第三条：24 小时内未见被投诉站在 cn.bbs.admin 作出解释说明或申辩，或者双方无
+            法达成共识与谅解的情况下，由管理委员会根据管理章程的相关规定直接作
+            出决议。
+    第四条：新闻组协调委员会委员在 cn.bbs.admin 组根据投诉和调查情况在投诉提出
+            后的 1～3 个工作日内发表自己对投诉提案的看法；无意见发表者视为弃权
+            。
+    第五条：协调委员会常务委员以及管理委员会相关负责人根据调查结果以及各协调委
+            员发表之意见做最后决议。决议公布于 cn.bbs.admin 组，并由管理委员会
+            负责执行。
+
+第四章 转信规范
+
+    第一条：BBS 站申请 cn.bbs.* 新闻组被动转信并获得通过，就成为 cn.bbs.* 新闻
+            组转信的正式成员即正式转信 BBS 站，正式成员必须遵循以下统一规范，以
+            保证转信的秩序和各成员 BBS 站的共同利益。
+    第二条：被动转信必须为双向转信，即文章既有转入又有转出。只转入不转出或者只
+            转出不转入的单向转信行为都将被取消被动转信的资格。
+    第三条：转信 BBS 站不得将转信版面的发文选项一律默认为“本地发表”。
+    第四条：正式转信 BBS 站必须正常发送、接受 cancel msg，不得以任何方式屏蔽
+            cancel msg及其功能。
+
+第五章 处罚规定
+
+    第一条：对于以下情况经 cn.bbs.* 转信协调委员会商议可以处以暂时关闭转信的处
+            罚：
+            1.  出现违反互联网管理规定以及国家法律、法规的文章，如反动、色情、
+                煽动性质的文章或者商业广告等。
+            2.  出现聊天灌水，大量与版面无关、无用文章，干扰新闻组正常秩序情节
+                较重的行为。
+    第二条：对于以下情况经 cn.bbs.* 转信协调委员会商议可以处以警告并限期改正的
+            处罚：
+            1.  版面聊天、灌水、商业广告等行为，短期内出现并情节较轻。
+            2.  一切与该组讨论内容不相容并引起其他参与转信BBS反感的行为。
+            3.  违反第四章“转信规范”之规定的行为。
+    第三条：限期整改仍然达不到要求或者情节严重的 BBS 站关闭除 cn.bbs.admin 组外
+            的其它组的转信权利。直到情况得到好转，在 cn.bbs.admin 组由其转信管
+            理员申请恢复转信权利。cn.bbs.* 新闻组管理委员会审核决定是否恢复该站
+            的转信权利。
+----8<--------8<--------8<--------8<--------8<--------8<--------8<--------8<---
+附件一：cn.bbs.* 管理小组成员列表
+
+主管：  Czz
+成员：  BAX
+        ELM
+        glutton
+        great
+        qxb
+        royalhawk
+	TurboZV
+        west
+----8<--------8<--------8<--------8<--------8<--------8<--------8<--------8<---
+附件二：cn.bbs.* 管理小组分工
+
+以下为 cn.bbs.* 管理小组分工，分别负责相关组的投诉、监察等事务。
+ 
+新闻组组名                              负责人
+cn.bbs.admin                            Czz
+cn.bbs.admin.announce                   Czz
+cn.bbs.admin.installbbs                 Czz
+cn.bbs.admin.lists                      Czz
+cn.bbs.admin.lists.weather              Czz
+cn.bbs.admin.test                       Czz
+cn.bbs.campus.cqupt                     west
+cn.bbs.campus.csu                       west
+cn.bbs.campus.hust                      royalhawk
+cn.bbs.campus.job                       great
+cn.bbs.campus.neu                       west
+cn.bbs.campus.pku                       royalhawk
+cn.bbs.campus.sjtu                      royalhawk
+cn.bbs.campus.study-abroad              BAX
+cn.bbs.campus.tju                       royalhawk
+cn.bbs.campus.tsinghua                  qxb
+cn.bbs.campus.tsinghua.building1        qxb
+cn.bbs.campus.ysu                       royalhawk
+cn.bbs.campus.zju                       royalhawk
+cn.bbs.campus.zsu                       royalhawk
+cn.bbs.comp.book                        great
+cn.bbs.comp.database                    BAX
+cn.bbs.comp.embedded                    qxb
+cn.bbs.comp.graphics                    qxb
+cn.bbs.comp.hardware                    great
+cn.bbs.comp.lang                        great
+cn.bbs.comp.lang.delphi                 great
+cn.bbs.comp.lang.java                   ELM
+cn.bbs.comp.lang.perl                   ELM
+cn.bbs.comp.lang.python                 ELM
+cn.bbs.comp.lang.visual-basic           ELM
+cn.bbs.comp.linux                       ELM
+cn.bbs.comp.ms-windows                  ELM
+cn.bbs.comp.multimedia                  ELM
+cn.bbs.comp.network                     ELM
+cn.bbs.comp.security                    qxb
+cn.bbs.comp.software                    qxb
+cn.bbs.comp.unix.bsd                    qxb
+cn.bbs.comp.unix.development            BAX
+cn.bbs.comp.unix.development.kernel     BAX
+cn.bbs.comp.unix.development.network    BAX
+cn.bbs.lang.chinese                     great
+cn.bbs.lang.english                     BAX
+cn.bbs.literal.ascii-art                BAX
+cn.bbs.literal.novel.emprise            TurboZV
+cn.bbs.literal.novel.sci-fiction        TurboZV
+cn.bbs.literal.original                 great
+cn.bbs.rec.comic                        glutton
+cn.bbs.rec.drama                        west
+cn.bbs.rec.game                         glutton
+cn.bbs.rec.game.quake                   west
+cn.bbs.rec.movie                        TurboZV
+cn.bbs.rec.music                        TurboZV
+cn.bbs.rec.photo                        TurboZV
+cn.bbs.rec.riddle                       TurboZV
+cn.bbs.rec.travel                       TurboZV
+cn.bbs.sci.astrology                    TurboZV
+cn.bbs.sci.electronics                  great
+cn.bbs.sci.nano                         qxb
+cn.bbs.soc.market                       glutton
+cn.bbs.sports.basketball                glutton
+cn.bbs.sports.soccer                    glutton
+cn.bbs.sports.table-tennis              west
+cn.bbs.talk.girl                        glutton
+cn.bbs.talk.joke                        glutton
+cn.bbs.talk.love                        glutton
