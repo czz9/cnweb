@@ -21,6 +21,7 @@ $action = "admin";
 $does = array(	"gen_innd" => "news配置",
 		"gen_named" => "named配置",
 		"reload_named" => "named更新",
+		"listbbs" => "BBS列表",
 		"acct_modify" => "账号管理",
 		"acct_purge" => "账号清除",
 		"post_mails" => "信件通知",
