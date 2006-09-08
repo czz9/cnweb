@@ -56,6 +56,16 @@ CREATE TABLE _news_srv (
   PRIMARY KEY  (id)
 ) TYPE=MyISAM;
 
+CREATE TABLE _inn_req (
+  id int(10) unsigned NOT NULL auto_increment,
+  username varchar(12) NOT NULL default '',
+  newinnhost varchar(32) NOT NULL default '',
+  newinnport smallint(6) NOT NULL default '7777',
+  newgroups text NOT NULL,
+  reqtime datetime NOT NULL default '2000-1-1 00:00:00',
+  agree tinyint(1) NOT NULL default 0,
+  PRIMARY KEY (id)
+) TYPE=MyISAM;
 
 INSERT INTO _news_srv VALUES ('', 'maily.cic.tsinghua.edu.cn', '166.111.4.19' ,'');
 INSERT INTO _news_srv VALUES ('', 'news.happynet.org', '166.111.160.80', '');

@@ -59,8 +59,11 @@ if ($msg == "") {
     }
 
     if (!$innport) $innport = 7777;
+	
+	$db->query("DELETE FROM _inn_req WHERE username = '$name'");
+	$db->query("INSERT INTO _inn_req (username,newinnhost,newinnport,newgroups,reqtime) VALUES ('$name','$innhost',$innport,'$groups',now())");
 
-    $db->query("UPDATE _my_dns SET groups = '$groups',  xmode = (xmode | $xmode), innhost = '$innhost', innport = '$innport'" . $attach . " WHERE pass = '$pass' AND name = '$name'");
+    $db->query("UPDATE _my_dns SET  xmode = (xmode | $xmode)" . $attach . " WHERE pass = '$pass' AND name = '$name'");
 
    if($db->affected_rows() == 1) {
 	$string = "<br><p align=\"center\"><font color=\"red\" size=\"5\"><b>申请/修改已经提交！</b></font><br><br>\n"

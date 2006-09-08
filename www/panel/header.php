@@ -63,6 +63,22 @@ header("Cache-Control: post-check=1, pre-check=1");
 	<div class="menutitle">转信申请</div>
 <?php
 	print("\t<ul>\n" . $headmsg . "\t</ul>");
+	if($action == "admin") {
+?>
+	<div class="menutitle">管理功能</div>
+	<ul>
+<?php
+		foreach($does as $key => $value)
+    		print("\t\t<li><a href=\"" . $_SERVER['PHP_SELF'] . "?do=" . $key . "\">" . $value . "</a></li>");
+?>
+	</ul>
+<?php
+	}
+	else {
+?>
+	<div class="menutitle"><a href="admin.php">进入管理界面</a></div>
+<?php
+	}
 ?>
 </div>
 <div id="divMain"><div style="margin:20px">

@@ -1,12 +1,12 @@
-td, th {font-size: 12px; font-family: sans-serif; }
-a { font-family: sans-serif; font-size: 12px; color: #0000f0; text-decoration: none } 
+td, th {font-size: 12px; font-family:Verdana, Arial, Helvetica, sans-serif; }
+a { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; color: #0000f0; text-decoration: none } 
 a:hover { color : #f00000; text-decoration : underline } 
-form { font-family: sans-serif; }
+form { font-family: Verdana, Arial, Helvetica, sans-serif; }
 select { font-size: 12px }
-input, object { background-color: #ffffff; font-size: 12px; border: 1px #cccccc double; font-family: sans-serif; }
+input, object { background-color: #ffffff; font-size: 12px; border: 1px #cccccc double; font-family: Verdana, Arial, Helvetica, sans-serif; }
 option { background-color: #f3f3f3; color: #51485f }
 textarea { background-color: #ffffff; font-size: 12px ; border: 1px #cccccc double; overflow: auto; clip:rect() }
-body {font-size: 12px; font-family: sans-serif; margin: 0px}
+body {font-size: 12px; font-family: Verdana, Arial, Helvetica, sans-serif; margin: 0px}
 ul {list-style:square}
 .menutitle {
 	margin:10px;
