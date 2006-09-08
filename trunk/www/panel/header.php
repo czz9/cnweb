@@ -42,26 +42,16 @@ header("Date: " . gmdate("D, d M Y H:i:s") . " GMT");
 header("Cache-Control: post-check=1, pre-check=1");
 
 ?>
-
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title><?php echo $syscfg['title']?> - <?php echo $columns[$action]?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<style type="text/css">
-<!--
-body, td, th { font-size: 12px; font-family: sans-serif; }
-a { font-family: sans-serif; font-size: 12px; color: #0000f0; text-decoration: none } 
-a:hover { color : #f00000; text-decoration : underline } 
-form { font-family: sans-serif; }
-select { font-size: 12px }
-input, object { background-color: #ffffff; font-size: 12px; border: 1px #cccccc double; font-family: sans-serif; }
-option { background-color: #f3f3f3; color: #51485f }
-textarea { background-color: #ffffff; font-size: 12px ; border: 1px #cccccc double; overflow: auto; clip:rect() }
-//-->
-</style>
+<link href="default.css" rel="stylesheet" type="text/css" />
 </head>
 <body bgcolor="#FFFFFF">
+<div id="divLogo"><a href="index.php"><img src="logo.gif" width="369" height="50" border="0" /></a></div>
+<div id="divMenu">aaa</div>
+<div id="divMain">
 <h1 align="center"><b><?php echo $columns[$action]?></b></h1>
 <p align="center"><?php echo $headmsg?></p>
-<table border="0" width="90%" align="center">
-<tr><td width="100%" wrap>
