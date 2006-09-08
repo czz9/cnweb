@@ -7,7 +7,17 @@ input, object { background-color: #ffffff; font-size: 12px; border: 1px #cccccc 
 option { background-color: #f3f3f3; color: #51485f }
 textarea { background-color: #ffffff; font-size: 12px ; border: 1px #cccccc double; overflow: auto; clip:rect() }
 body {font-size: 12px; font-family: sans-serif; margin: 0px}
-
+ul {list-style:square}
+.menutitle {
+	margin:10px;
+	padding-left:20px;
+	padding-bottom:5px;
+	border-bottom:1px dashed #9A99BF;
+	font-weight:bold;
+	background-image:url(round.gif);
+	background-repeat:no-repeat;
+	background-position:left top;
+}
 #divLogo {
 	border-bottom:1px solid #5553AE;
 }
@@ -15,9 +25,12 @@ body {font-size: 12px; font-family: sans-serif; margin: 0px}
 	float:left;
 	width:200px;
 }
+#divMenu a {
+	color:#000000;
+}
 #divMain {
-	margin-left:200px;
 	border-left:1px solid #BCBCBC;
+	float:left;
 }
 #divFoot {
 	clear:both;
