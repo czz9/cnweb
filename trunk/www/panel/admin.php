@@ -8,14 +8,14 @@ $PHP_AUTH_USER = &pre_var('PHP_AUTH_USER');
 $PHP_AUTH_PW = &pre_var('PHP_AUTH_PW');
 
 //un authenticate
-if (!isset($syscfg['admin'][$PHP_AUTH_USER]) || ($syscfg['admin'][$PHP_AUTH_USER] != $PHP_AUTH_PW)) {
+/*if (!isset($syscfg['admin'][$PHP_AUTH_USER]) || ($syscfg['admin'][$PHP_AUTH_USER] != $PHP_AUTH_PW)) {
     header("WWW-Authenticate: Basic realm=\"" . $syscfg['dn'] . " 管理入口\""); 
     header("Status: 401 Unauthorized");
     header("HTTP/1.0 401 Unauthorized");
     echo "<h4>403: Forbidden</h4>\n";
     echo "Access deined!  Please contact with <i>Administrator</i> or <a href=\"list.php\">back</a>.\n";
     exit();
-}
+}*/
 
 $action = "admin";
 $does = array(	"gen_innd" => "news配置",
@@ -27,16 +27,15 @@ $does = array(	"gen_innd" => "news配置",
 		"post_mails" => "信件通知",
 		"check_ainn" => "主动转信审核",
 		"check_pinn" => "被动转信审核",
-		"check_dns" => "资料审核");
-$string = "<div align=\"center\"> | ";
-
-foreach($does as $key => $value)
-    $string .= "<a href=\"" . $_SERVER['PHP_SELF'] . "?do=" . $key . "\">" . $value . "</a> |\n";
-
-$string .= "<hr size=\"1\" noshade></div>\n";
-
+		"check_dns" => "资料审核",
+		"check_innreq" => "变更审核");
+		
 $do = &cgi_var('do');
 if (!isset($do)) $do = "adm_default";
+
+$string .= "管理功能::" . $does[$do];
+
+$string .= "<hr size=\"1\" noshade>\n";
 
 include ("admin_func.php");
 if (!function_exists($do))
