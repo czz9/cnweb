@@ -7,7 +7,7 @@
 $PHP_SELF = $HTTP_SERVER_VARS['PHP_SELF'];
 
 if (!isset($action)) $action = "list";
-$columns = Array(
+$lists = Array(
 		    "list" => "BBS 列表",
 		    "listnews" => "服务器列表",
 		    "listgroup" => "新闻组列表",
@@ -28,13 +28,14 @@ else {
     $columns['lostpw'] = "取回密码";
 }
 
-if (!isset($columns[$action])) die("Access denied!");
-
-$headmsg = "| ";
+if (! (isset($lists[$action]) || isset($columns[$action]))) die("Access denied!");
 
 foreach ($columns as $key => $value)
     if ($key != "admin") {
-        $headmsg .= "<a href=\"" . $key . ".php\">" . $value . "</a> |\n";
+		if($key == $action)
+	        $headmsg .= "\t\t<li><b>[<a href=\"" . $key . ".php\">" . $value . "</a>]</b></li>\n";
+		else
+	        $headmsg .= "\t\t<li><a href=\"" . $key . ".php\">" . $value . "</a></li>\n";
     }
 
 header("Expires: Mon, 26 Jul 2000 05:00:00 GMT");    // okay, it will not be expired for ever.
@@ -51,7 +52,17 @@ header("Cache-Control: post-check=1, pre-check=1");
 </head>
 <body bgcolor="#FFFFFF">
 <div id="divLogo"><a href="index.php"><img src="logo.gif" width="369" height="50" border="0" /></a></div>
-<div id="divMenu">aaa</div>
-<div id="divMain">
-<h1 align="center"><b><?php echo $columns[$action]?></b></h1>
-<p align="center"><?php echo $headmsg?></p>
+<div id="divMenu">
+	<br />
+	<div class="menutitle">新闻组数据</div>
+	<ul>
+		<li><a href="listnews.php">服务器列表</a></li>
+		<li><a href="listgroup.php">新闻组列表</a></li>
+		<li><a href="http://www.cn-bbs.org/index.php?c">转信介绍与文档</a></li>
+	</ul>
+	<div class="menutitle">转信申请</div>
+<?php
+	print("\t<ul>\n" . $headmsg . "\t</ul>");
+?>
+</div>
+<div id="divMain"><div style="margin:20px">
