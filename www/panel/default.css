@@ -1,0 +1,27 @@
+td, th {font-size: 12px; font-family: sans-serif; }
+a { font-family: sans-serif; font-size: 12px; color: #0000f0; text-decoration: none } 
+a:hover { color : #f00000; text-decoration : underline } 
+form { font-family: sans-serif; }
+select { font-size: 12px }
+input, object { background-color: #ffffff; font-size: 12px; border: 1px #cccccc double; font-family: sans-serif; }
+option { background-color: #f3f3f3; color: #51485f }
+textarea { background-color: #ffffff; font-size: 12px ; border: 1px #cccccc double; overflow: auto; clip:rect() }
+body {font-size: 12px; font-family: sans-serif; margin: 0px}
+
+#divLogo {
+	border-bottom:1px solid #5553AE;
+}
+#divMenu {
+	float:left;
+	width:200px;
+}
+#divMain {
+	margin-left:200px;
+	border-left:1px solid #BCBCBC;
+}
+#divFoot {
+	clear:both;
+	padding:10px;
+	border-top:1px solid #5553AE;
+	text-align:center;
+}
