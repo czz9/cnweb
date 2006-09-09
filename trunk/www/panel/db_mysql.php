@@ -281,6 +281,7 @@ class db_mysql {
 	if (isset($this->Record[$Name])) {
 	    return $this->Record[$Name];
 	}
+	else return NULL;
     }
     
     function p($Name) {
