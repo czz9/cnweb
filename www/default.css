@@ -1,56 +1,12 @@
-body {
-	margin:0px;
-	font-family:Verdana, Arial, Helvetica, sans-serif;
-	font-size:13px;
-}
-a {
-	text-decoration:none;
-	color: #0000FF;
-}
-ul {
-	list-style:square;
-}
-.menutitle {
-	margin:10px;
-	padding-left:20px;
-	padding-bottom:5px;
-	border-bottom:1px dashed #9A99BF;
-	font-weight:bold;
-	background-image:url(round.gif);
-	background-repeat:no-repeat;
-	background-position:left top;
-}
-.loginbox {
-	width:80px;
-	height:17px;
-	border:1px dotted #998EC4;
-	background-color:#FFFFFF;
-}
-.loginbtn {
-	height:20px;
-	border:0px;
-	background:none;
-}
-#divLogo {
-	border-bottom:1px solid #5553AE;
-}
-#divMenu {
-	float:left;
-	width:200px;
-}
-#divMenu a {
-	color:#000000;
-}
-#divMain {
-	margin-left:200px;
-	border-left:1px solid #BCBCBC;
-}
-#divMain a {
-	color:#8928FF;
-}
-#divFoot {
-	clear:both;
-	padding:10px;
-	border-top:1px solid #5553AE;
-	text-align:center;
-}
+body{margin:0px; font-family:Verdana,Arial,Helvetica,sans-serif; font-size:13px}
+a{text-decoration:none; color:#00F}
+ul{list-style:square}
+.menutitle{margin:10px; padding-left:20px; padding-bottom:5px; border-bottom:1px dashed #9A99BF; font-weight:bold; background-image:url(round.gif); background-repeat:no-repeat; background-position:left top}
+.loginbox{width:80px; height:17px; border:1px dotted #998EC4; background-color:#FFF}
+.loginbtn{height:20px; border:0px; background:none}
+#divLogo{border-bottom:1px solid #5553AE}
+#divMenu{float:left; width:200px}
+#divMenu a{color:#000}
+#divMain{margin-left:200px; border-left:1px solid #BCBCBC}
+#divMain a{color:#8928FF}
+#divFoot{clear:both; padding:10px; border-top:1px solid #5553AE; text-align:center}
