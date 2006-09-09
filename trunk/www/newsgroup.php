@@ -1,12 +1,12 @@
 <div style="margin:20px">
 <h3>cn.bbs.* newsgroups</h3>
-<h4>updated at <?php print date('y-m-d h:i:s'); ?></h4>
+<h5>updated on <?php print date('r'); ?></h5>
 <pre>
 <?php
 	require("dbconf.php");
 	mysql_connect(MYSQL_HOST, MYSQL_USERNAME, MYSQL_PASSWORD);
 	mysql_select_db(MYSQL_DB);
-	$query = "SELECT `name`,`title` FROM `_news_grp` ORDER BY `name` ASC";
+	$query = "SELECT `name`,`title` FROM `_news_grp` WHERE `name` LIKE '%cn.bbs%' ORDER BY `name` ASC";
 	$result = mysql_query($query);
 	while($record = mysql_fetch_array($result)) {
 		print($record["name"] . "\t" . $record["title"] . "\n");
