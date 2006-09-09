@@ -5,6 +5,23 @@
 -- --------------------------------------------------------
 
 -- 
+-- 表的结构 `_inn_req`
+-- 
+
+CREATE TABLE `_inn_req` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `username` varchar(12) NOT NULL default '',
+  `newinnhost` varchar(32) NOT NULL default '',
+  `newinnport` smallint(6) NOT NULL default '7777',
+  `newgroups` text NOT NULL,
+  `reqtime` datetime NOT NULL default '2000-01-01 00:00:00',
+  `agree` tinyint(1) NOT NULL default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
 -- 表的结构 `_keep_dns`
 -- 
 
@@ -15,8 +32,7 @@ CREATE TABLE `_keep_dns` (
   `type` varchar(12) NOT NULL default 'A',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;
-
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -55,8 +71,7 @@ CREATE TABLE `_my_dns` (
   KEY `xmode` (`xmode`,`innsrv`,`name`,`pass`),
   KEY `pass` (`pass`,`name`,`email`),
   KEY `authtime` (`authtime`,`xmode`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;
-
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -71,7 +86,7 @@ CREATE TABLE `_news_grp` (
   `type` tinyint(4) NOT NULL default '1',
   PRIMARY KEY  (`id`),
   KEY `type` (`type`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=121 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- 
 -- 导出表中的数据 `_news_grp`
@@ -209,7 +224,7 @@ CREATE TABLE `_news_srv` (
   `url` varchar(40) NOT NULL default '',
   `comment` varchar(40) NOT NULL default '',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- 
 -- 导出表中的数据 `_news_srv`
