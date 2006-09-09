@@ -19,12 +19,13 @@
 	if(isset($_GET["c"])) {
 ?>
 	<div class="menutitle"><a href="index.php?c">首页</a></div>
-	<div class="menutitle">文档</div>
+	<div class="menutitle"><a href="index.php?c#Documentation_and_FAQs">文档</a></div>
 	<ul>
 		<li><a href="index.php?c&amp;file=charter">管理章程</a></li>
 		<li><a href="index.php?c&amp;file=howto">技术手册</a></li>
 		<li><a href="index.php?c&amp;file=manual">版主手册</a></li>
 		<li><a href="index.php?c&amp;file=newgroup">开组须知</a></li>
+		<li><a href="index.php?c&amp;file=faq">FAQ for news admin</a></li>
 		<li><a href="index.php">English Version</a></li>
 	</ul>
 	<div class="menutitle">新闻组数据</div>
@@ -46,7 +47,7 @@
 	}
 	else {
 ?>
-	<div class="menutitle"><a href="index.php?c">cn-bbs.org</a></div>
+	<div class="menutitle"><a href="index.php">cn-bbs.org</a></div>
 	<ul>
 		<li><a href="index.php#Welcome">Welcome</a></li>
 		<li><a href="index.php#Overview">Overview</a></li>
