@@ -31,6 +31,9 @@
 			case "faq":
 				require("doc/FAQ");
 				break;
+			case "pubkey":
+				require("pubkey-cn.bbs.admin.announce");
+				break;
 			default:
 		}
 ?>
