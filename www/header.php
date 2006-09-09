@@ -34,7 +34,7 @@
 		<li><a href="index.php?c&amp;display=newsgroup">新闻组列表</a></li>
 		<li><a href="http://webnews.cn-bbs.org" target="_blank">新闻组网页版</a></li>
 	</ul>
-	<div class="menutitle"><a href="https://panel.cn-bbs.org/">转信申请面板</a></div>
+	<div class="menutitle"><a href="https://panel.cn-bbs.org/">控制面板</a></div>
 	<div align="center">
 		<form action="https://panel.cn-bbs.org/loginout.php" method="post" id="frmPanel">
 			登录名称：<input type="text" name="name" maxlength="16" class="loginbox" /><br />
