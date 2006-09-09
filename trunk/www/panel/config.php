@@ -9,7 +9,7 @@ define ("_INN_PASSIVE_",	0x004);	// 被动转信
 define ("_INN_ACTIVE_",		0x008);	// 主动转信
 define ("_ACCT_ACTIVE_",	0x010); // 自已激活
 
-$syscfg['title']	= "CN-BBS.ORG 域名及转信申请";
+$syscfg['title']	= "cn.bbs.* 控制面板";
 $syscfg['badid']	= Array("shit", "fuck", "tmd",
 				"ns1", "ns",
 				"ns2",
