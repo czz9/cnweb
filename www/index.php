@@ -1,4 +1,5 @@
 <?php
+	require("dbconf.php");
 	require("header.php");
 	if(isset($_GET["display"])) {
 		switch($_GET["display"]) {
@@ -41,8 +42,19 @@
 <?php
 	}
 	else {
-		if($chinese)
+		if($chinese) {
+			mysql_connect(MYSQL_HOST, MYSQL_USERNAME, MYSQL_PASSWORD);
+			mysql_select_db(MYSQL_DB);
+			$result = mysql_query("SELECT *,UNIX_TIMESTAMP(posttime) 'ts_posttime' FROM _mainpage_news ORDER BY id DESC LIMIT 0,5");
+			$mainpage_news_content = "<UL>\n";
+			while($record = mysql_fetch_array($result)) {
+				$mainpage_news_content .= "  <LI><a href=\"viewnews.php?id={$record["id"]}\">{$record["title"]}</a>";
+				$mainpage_news_content .= " (" . date("Y-m-d", $record["ts_posttime"]) . ")</LI>\n";
+			}
+			$mainpage_news_content .= "</UL>";
+			mysql_close();
 			require("chimain.html");
+		}
 		else
 			require("engmain.html");
 	}
