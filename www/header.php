@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>cn.bbs.*</title>
+<title>cn.bbs.* newsgroups administration</title>
 <link href="default.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -32,7 +32,7 @@
 	<ul>
 		<li><a href="index.php?c&amp;display=serverlist">服务器列表</a></li>
 		<li><a href="index.php?c&amp;display=newsgroup">新闻组列表</a></li>
-		<li><a href="http://webnews.cn-bbs.org">新闻组网页版</a></li>
+		<li><a href="http://webnews.cn-bbs.org" target="_blank">新闻组网页版</a></li>
 	</ul>
 	<div class="menutitle"><a href="https://panel.cn-bbs.org/">转信申请面板</a></div>
 	<div align="center">
