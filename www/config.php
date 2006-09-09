@@ -1,3 +1,3 @@
 <?php
-	//define("STATIC_PAGE", 1);
+	define("STATIC_PAGE", 1);
 ?>
