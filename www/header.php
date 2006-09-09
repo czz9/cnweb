@@ -20,7 +20,7 @@
 </head>
 <body>
 <div style="float:right;padding-top:30px;padding-right:5px">
-<?php if($chinese) { ?><a href="index.php?e">English Version</a></div><div id="divLogo"><a href="index.php?c"><?php } else { ?><a href="index.php?c">中文版</a></div><div id="divLogo"><a href="index.php"><?php } ?><img src="logo.gif" width="369" height="50" border="0" /></a></div>
+<?php if($chinese) { ?><a href="index.php?e">English Version</a></div><div id="divLogo"><a href="index.php?c"><?php } else { ?><a href="index.php?c">中文版</a></div><div id="divLogo"><a href="index.php?e"><?php } ?><img src="logo.gif" width="369" height="50" border="0" /></a></div>
 <div id="divMenu">
 	<br />
 <?php
