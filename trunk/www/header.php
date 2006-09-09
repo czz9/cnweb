@@ -47,7 +47,7 @@
 	}
 	else {
 ?>
-	<div class="menutitle"><a href="index.php">cn-bbs.org</a></div>
+	<div class="menutitle"><a href="index.php">Home</a></div>
 	<ul>
 		<li><a href="index.php#Welcome">Welcome</a></li>
 		<li><a href="index.php#Overview">Overview</a></li>
