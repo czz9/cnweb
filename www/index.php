@@ -55,7 +55,7 @@
 			require("chimain.html");
 		}
 		else {
-			$result = mysql_query("SELECT * FROM _news_srv ORDER BY id ASC");
+			$result = mysql_query("SELECT * FROM _news_srv WHERE status=1 ORDER BY id ASC");
 			$server_list = "<UL>\n";
 			while($record = mysql_fetch_array($result)) {
 				$server_list .= "  <LI><a href=\"http://{$record["name"]}/\" targer=\"_blank\">{$record["name"]}</a>";
