@@ -41,7 +41,7 @@
 <?php
 	}
 	else {
-		if(isset($_GET["c"]))
+		if($chinese)
 			require("chimain.html");
 		else
 			require("engmain.html");

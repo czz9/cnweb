@@ -1,5 +1,15 @@
 <?php
 	require("config.php");
+	if(isset($_GET["c"]))
+		$chinese = true;
+	else if(isset($_GET["e"]))
+		$chinese = false;
+	else {
+		if(substr($_SERVER["HTTP_ACCEPT_LANGUAGE"], 0, 3) == "zh-")
+			$chinese = true;
+		else
+			$chinese = false;
+	}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -10,15 +20,15 @@
 </head>
 <body>
 <div style="float:right;padding-top:30px;padding-right:5px">
-<?php if(isset($_GET["c"])) { ?><a href="index.php">English Version</a></div><div id="divLogo"><a href="index.php?c"><?php } else { ?><a href="index.php?c">中文版</a></div><div id="divLogo"><a href="index.php"><?php } ?><img src="logo.gif" width="369" height="50" border="0" /></a></div>
+<?php if($chinese) { ?><a href="index.php?e">English Version</a></div><div id="divLogo"><a href="index.php?c"><?php } else { ?><a href="index.php?c">中文版</a></div><div id="divLogo"><a href="index.php"><?php } ?><img src="logo.gif" width="369" height="50" border="0" /></a></div>
 <div id="divMenu">
 	<br />
 <?php
-	if(isset($_GET["c"])) {
+	if($chinese) {
 ?>
 	<div class="menutitle"><a href="index.php?c">首页</a></div>
 	<ul>
-		<li><a href="index.php">English Version</a></li>
+		<li><a href="index.php?e">English Version</a></li>
 	</ul>
 	<div class="menutitle"><a href="index.php?c#Documentation_and_FAQs">文档</a></div>
 	<ul>
@@ -48,15 +58,15 @@
 	}
 	else {
 ?>
-	<div class="menutitle"><a href="index.php">Home</a></div>
+	<div class="menutitle"><a href="index.php?e">Home</a></div>
 	<ul>
 		<li><a href="index.php?c">中文版</a></li>
 	</ul>
-	<div class="menutitle"><a href="index.php?#Documentation_and_FAQs">Doc</a></div>
+	<div class="menutitle"><a href="index.php?e#Documentation_and_FAQs">Doc</a></div>
 	<ul>
-		<li><a href="index.php?file=faq">FAQ</a></li>
-		<li><a href="index.php?display=newsgroup">Checkgroups</a></li>
-		<li><a href="index.php?file=pubkey">Pubkey</a></li>
+		<li><a href="index.php?e&amp;file=faq">FAQ</a></li>
+		<li><a href="index.php?e&amp;display=newsgroup">Checkgroups</a></li>
+		<li><a href="index.php?e&amp;file=pubkey">Pubkey</a></li>
 	</ul>
 	<div class="menutitle"><a href="https://panel.cn-bbs.org/">Login</a></div>
 	<div align="center">
