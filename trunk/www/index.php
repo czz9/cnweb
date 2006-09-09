@@ -17,19 +17,19 @@
 <?php
 		switch($_GET["file"]) {
 			case "charter":
-				require("doc/CHARTER");
+				require("cndoc/CHARTER");
 				break;
 			case "howto":
-				require("doc/HOWTO");
+				require("cndoc/HOWTO");
 				break;
 			case "manual":
-				require("doc/MANUAL");
+				require("cndoc/MANUAL");
 				break;
 			case "newgroup":
-				require("doc/NEWGROUP");
+				require("cndoc/NEWGROUP");
 				break;
 			case "faq":
-				require("doc/FAQ");
+				require("cndoc/FAQ");
 				break;
 			case "pubkey":
 				require("pubkey-cn.bbs.admin.announce");
