@@ -242,3 +242,14 @@ INSERT INTO `_news_srv` VALUES (10, 'news.bylinux.net', '202.64.181.18', 'http:/
 INSERT INTO `_news_srv` VALUES (12, 'news.szu.edu.cn', 'BBS.szu.edu.cn', 'http://210.39.3.50/~news/', '广东、广西、海南');
 INSERT INTO `_news_srv` VALUES (13, 'whnet.dhs.org', '202.114.14.228', 'http://whnet.3322.org/', '湖北、湖南、河南');
 INSERT INTO `_news_srv` VALUES (14, 'news2.happynet.org', 'th116088.ip.tsinghua.edu.cn', 'http://news2.happynet.org/', '天津、河北、山西、内蒙古');
+
+
+
+CREATE TABLE `_mainpage_news` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `posttime` datetime NOT NULL default '2000-1-1 00:00:00',
+  `title` varchar(200) NOT NULL default '',
+  `content` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
