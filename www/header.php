@@ -28,10 +28,11 @@
 		<li><a href="index.php?c&amp;file=newgroup">开组须知</a></li>
 		<li><a href="index.php?c&amp;file=faq">FAQ for news admin</a></li>
 	</ul>
-	<div class="menutitle">新闻组数据</div>
+	<div class="menutitle"><a href="index.php?c#Resources">资源</a></div>
 	<ul>
 		<li><a href="index.php?c&amp;display=serverlist">服务器列表</a></li>
 		<li><a href="index.php?c&amp;display=newsgroup">新闻组列表</a></li>
+		<li><a href="http://webnews.cn-bbs.org">新闻组网页版</a></li>
 	</ul>
 	<div class="menutitle"><a href="http://panel.cn-bbs.org/">转信申请面板</a></div>
 	<div align="center">
@@ -54,8 +55,8 @@
 	<div class="menutitle"><a href="index.php?#Documentation_and_FAQs">Doc</a></div>
 	<ul>
 		<li><a href="index.php?file=faq">FAQ</a></li>
-		<li><a href="index.php?display=newsgroup">checkgroups</a></li>
-		<li><a href="index.php?file=pubkey">pubkey</a></li>
+		<li><a href="index.php?display=newsgroup">Checkgroups</a></li>
+		<li><a href="index.php?file=pubkey">Pubkey</a></li>
 	</ul>
 	<div class="menutitle"><a href="https://panel.cn-bbs.org/">Login</a></div>
 	<div align="center">
