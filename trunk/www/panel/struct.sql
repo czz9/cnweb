@@ -224,6 +224,7 @@ CREATE TABLE `_news_srv` (
   `url` varchar(40) NOT NULL default '',
   `comment` varchar(40) NOT NULL default '',
   `comment_en` varchar(40) NOT NULL default '',
+  `status` tinyint(3) unsigned NOT NULL default '0',
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -231,18 +232,18 @@ CREATE TABLE `_news_srv` (
 -- 导出表中的数据 `_news_srv`
 -- 
 
-INSERT INTO `_news_srv` VALUES (1, 'news.newsmth.org', '61.182.213.237', 'http://news.newsmth.org/', 'NEWSMTH专用', 'ChinaCNC');
-INSERT INTO `_news_srv` VALUES (2, 'news.happynet.org', 'th116080.ip.tsinghua.edu.cn', 'http://news.happynet.org/', '北京' ,'Beijing CERNET');
-INSERT INTO `_news_srv` VALUES (3, 'news.zixia.net', 'news.zixia.net', 'http://news.zixia.net/', '测试成员专用', '?');
-INSERT INTO `_news_srv` VALUES (4, 'bbsnews.sdu.edu.cn', '202.194.15.150', 'http://bbsnews.sdu.edu.cn/', '江苏、安徽、山东、上海、浙江、福建、江西', 'East CERNET');
-INSERT INTO `_news_srv` VALUES (5, 'news.cn-bbs.org', 'th117221.ip.tsinghua.edu.cn', 'http://news.cn-bbs.org/', 'Feeling专用', 'Beijing CERNET');
-INSERT INTO `_news_srv` VALUES (7, 'news.neu.edu.cn', 'news.neu.edu.cn', 'http://news.neu.edu.cn/', '辽宁、吉林、黑龙江', 'Northeast CERNET');
-INSERT INTO `_news_srv` VALUES (8, 'news.xjtu.edu.cn', 'irc.xjtu.edu.cn', 'http://news.xjtu.edu.cn/', '陕西、甘肃、新疆、宁夏、青海', 'Northwest CERNET');
-INSERT INTO `_news_srv` VALUES (9, 'news.uestc.edu.cn', '202.112.14.175', 'http://news.uestc.edu.cn/~news/', '四川、重庆、云南、贵州、西藏', 'Southwest CERNET');
-INSERT INTO `_news_srv` VALUES (10, 'news.bylinux.net', '202.64.181.18', 'http://news.bylinux.net/', '大陆之外', '?');
-INSERT INTO `_news_srv` VALUES (12, 'news.szu.edu.cn', 'BBS.szu.edu.cn', 'http://210.39.3.50/~news/', '广东、广西、海南', 'South CERNET');
-INSERT INTO `_news_srv` VALUES (13, 'whnet.dhs.org', '202.114.14.228', 'http://whnet.3322.org/', '湖北、湖南、河南', '?');
-INSERT INTO `_news_srv` VALUES (14, 'news2.happynet.org', 'th116088.ip.tsinghua.edu.cn', 'http://news2.happynet.org/', '天津、河北、山西、内蒙古', 'Beijing CERNET');
+INSERT INTO `_news_srv` VALUES (1, 'news.newsmth.org', '61.182.213.237', 'http://news.newsmth.org/', 'NEWSMTH专用', 'ChinaCNC', 1);
+INSERT INTO `_news_srv` VALUES (2, 'news.happynet.org', 'th116080.ip.tsinghua.edu.cn', 'http://news.happynet.org/', '北京' ,'Beijing CERNET', 3);
+INSERT INTO `_news_srv` VALUES (3, 'news.zixia.net', 'news.zixia.net', 'http://news.zixia.net/', '测试成员专用', '?', 1);
+INSERT INTO `_news_srv` VALUES (4, 'bbsnews.sdu.edu.cn', '202.194.15.150', 'http://bbsnews.sdu.edu.cn/', '江苏、安徽、山东、上海、浙江、福建、江西', 'East CERNET', 1);
+INSERT INTO `_news_srv` VALUES (5, 'news.cn-bbs.org', 'th117221.ip.tsinghua.edu.cn', 'http://news.cn-bbs.org/', 'Feeling专用', 'Beijing CERNET', 1);
+INSERT INTO `_news_srv` VALUES (7, 'news.neu.edu.cn', 'news.neu.edu.cn', 'http://news.neu.edu.cn/', '辽宁、吉林、黑龙江', 'Northeast CERNET', 1);
+INSERT INTO `_news_srv` VALUES (8, 'news.xjtu.edu.cn', 'irc.xjtu.edu.cn', 'http://news.xjtu.edu.cn/', '陕西、甘肃、新疆、宁夏、青海', 'Northwest CERNET', 1);
+INSERT INTO `_news_srv` VALUES (9, 'news.uestc.edu.cn', '202.112.14.175', 'http://news.uestc.edu.cn/~news/', '四川、重庆、云南、贵州、西藏', 'Southwest CERNET', 1);
+INSERT INTO `_news_srv` VALUES (10, 'news.bylinux.net', '202.64.181.18', 'http://news.bylinux.net/', '大陆之外', '?', 1);
+INSERT INTO `_news_srv` VALUES (12, 'news.szu.edu.cn', 'BBS.szu.edu.cn', 'http://210.39.3.50/~news/', '广东、广西、海南', 'South CERNET', 1);
+INSERT INTO `_news_srv` VALUES (13, 'whnet.dhs.org', '202.114.14.228', 'http://whnet.3322.org/', '湖北、湖南、河南', '?', 1);
+INSERT INTO `_news_srv` VALUES (14, 'news2.happynet.org', 'th116088.ip.tsinghua.edu.cn', 'http://news2.happynet.org/', '天津、河北、山西、内蒙古', 'Beijing CERNET', 1);
 
 
 
