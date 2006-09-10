@@ -2,7 +2,7 @@
 // join maillist
 // CN-BBS.ORG free domain register system.
 // write by <hightman.bbs@bbs.yi.org> IN php. for czz@smth
-// $Id: joininn.php,v 1.4 2004/05/31 18:29:53 czz Exp $
+// $Id$
 
 include ("config.php");
 if (!is_login()) {
@@ -47,7 +47,6 @@ if ($msg == "") {
     }
 
     $groups = serialize($tmpgrp);
-    $groups = addslashes($groups);
 
     $xmode = &cgi_var('xmode');
     $attach = "";
@@ -60,28 +59,40 @@ if ($msg == "") {
 
     if (!$innport) $innport = 7777;
 	
-	$db->query("DELETE FROM _inn_req WHERE username = '$name'");
-	$db->query("INSERT INTO _inn_req (username,newinnhost,newinnport,newgroups,reqtime) VALUES ('$name','$innhost',$innport,'$groups',now())");
-
-    $db->query("UPDATE _my_dns SET  xmode = (xmode | $xmode)" . $attach . " WHERE pass = '$pass' AND name = '$name'");
-
-   if($db->affected_rows() == 1) {
-	$string = "<br><p align=\"center\"><font color=\"red\" size=\"5\"><b>申请/修改已经提交！</b></font><br><br>\n"
-	. "(请参考<a href=\"innconf.php\">转信配置提示</a>) </p>";
-	if ($xmode) {
-	    $string .= "<p align=\"center\"><font color=\"red\" style=\"font-size: 16px\"><b>注意！</b></font>"
-   . "欢迎您加入中国 BBS 转信(cn.bbs.*)的大家庭，在管理员审核通过后，将发信通知您。请您在见信后，在 <a href=\"http://webnews.cn-bbs.org/group//cn.bbs.admin.test\" target=\"_blank\">cn.bbs.admin.test</a> 组进行转入/转出/跨站砍信测试，任何问题请参阅 <a href=help.php>F.A.Q.</a> 或在 <a href=\"http://webnews.cn-bbs.org/group//cn.bbs.admin\" target=\"_blank\">cn.bbs.admin</a> 组寻求帮助。祝您顺利！</p>\n";
+	$db->query_first("SELECT innhost, innport, groups FROM _my_dns WHERE name = '$name' LIMIT 1");
+	if(($innhost == $db->f("innhost")) && ($innport == $db->f("innport")) && ($groups == $db->f("groups"))) {
+		$string = "<p align=\"center\"><span style=\"color:#FF0000\">您没有作任何修改。</span>如果您以前提交过转信申请，那么您以前提交的申请已经取消。<a href=\"javascript:history.go(-1);\">点击这里返回</a>。</p>\n";
+		$db->query("DELETE FROM _inn_req WHERE username = '$name' AND agree=0");
 	}
 	else {
-	    $string .= "<p align=\"center\"><font color=\"red\" style=\"font-size: 16px\"><b>注意！</b></font>"
-   . "您已经修改了您的配置，请通知版主在 <a href=\"http://webnews.cn-bbs.org/group//cnbbs.admin.manager\" target=\"_blank\">cnbbs.admin.manager</a> 组发文申请，提醒管理员修改您的上游站点的相关设置。祝您顺利！</p>\n";
+		$groups = addslashes($groups);
+		$db->query("DELETE FROM _inn_req WHERE username = '$name' AND agree=0");
+		$db->query("INSERT INTO _inn_req (username,newinnhost,newinnport,newgroups,reqtime) VALUES ('$name','$innhost',$innport,'$groups',now())");
+
+		$db->query("UPDATE _my_dns SET  xmode = (xmode | $xmode)" . $attach . " WHERE pass = '$pass' AND name = '$name'");
+
+		$string = "<br><p align=\"center\"><font color=\"red\" size=\"5\"><b>申请/修改已经提交！</b></font><br><br>\n"
+		. "(请参考<a href=\"innconf.php\">转信配置提示</a>) </p>";
+		if ($xmode) {
+			$string .= "<p align=\"center\"><font color=\"red\" style=\"font-size: 16px\"><b>注意！</b></font>"
+			. "欢迎您加入中国 BBS 转信(cn.bbs.*)的大家庭，在管理员审核通过后，将发信通知您。请您在见信后，在 <a href=\"http://webnews.cn-bbs.org/group//cn.bbs.admin.test\" target=\"_blank\">cn.bbs.admin.test</a> 组进行转入/转出/跨站砍信测试，任何问题请参阅 <a href=help.php>F.A.Q.</a> 或在 <a href=\"http://webnews.cn-bbs.org/group//cn.bbs.admin\" target=\"_blank\">cn.bbs.admin</a> 组寻求帮助。祝您顺利！</p>\n";
+		}
+		else {
+			$string .= "<p align=\"center\"><font color=\"red\" style=\"font-size: 16px\"><b>注意！</b></font>"
+			. "您已经提交了转信申请，在管理员审核通过后，将发信通知您。</p>\n";
+		}
 	}
-   }
-   else       
-	$string = "<br><p align=\"center\"><font color=\"red\" size=\"5\"><b>修改失败或者没有修改！</font>\n"
-	. "<a href=\"loginout.php\">请重新登录</a></b></p>\n";
 }
 else {
+	$db->query_first("SELECT COUNT(*) 'count' FROM _inn_req WHERE username='$name' LIMIT 1");
+	if($db->f("count") > 0) {
+		$resubmit = true;
+		$resubmit_notice = "<tr><td colspan=\"2\"><div align=\"center\" style=\"border:1px solid #FF6600;padding:10px\">您已经提交过一份转信申请，管理员尚未审核，您如果再次提交申请将覆盖上次的申请。</div></td></tr>";
+	}
+	else {
+		$resubmit = false;
+		$resubmit_notice = "";
+	}
     $db->query_first("SELECT host, xmode, innhost, innport, innsrv, groups FROM _my_dns WHERE name = '$name' LIMIT 1");
     $oldgrp = $db->f('groups');
     if (!$innhost) $innhost = $db->f('innhost');
@@ -162,6 +173,7 @@ else {
      <li>如果您已经详细阅读以上条款并完全同意，请继续申请。</li>
      </ol>
      </td></tr>
+{$resubmit_notice}
      <tr><td colspan="2" align="center"><font color="red"><b>注意: $msg</b></font></td></tr>
      <form action="$PHP_SELF" method="post">
      <tr><td nowrap align="right"><b> BBS域名: </b></td>

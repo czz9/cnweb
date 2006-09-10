@@ -1,7 +1,7 @@
 <?php
 //admin_func.php
 //hightman@hightman.net
-//$Id: admin_func.php,v 1.5 2003/12/06 11:51:30 czz Exp $
+//$Id$
 
 require("send.php");
 
@@ -807,6 +807,21 @@ function check_innreq() {
 	require("db_mysql.php");
 	$db = new db_mysql($syscfg['mysql']);
 	$db->connect();
+	
+	// 批准申请
+	$agree = &cgi_var('agree');
+	if($agree > 0) {
+		$db->query_first("SELECT username,newinnhost,newinnport,newgroups FROM _inn_req WHERE id={$agree}");
+		if($db->f("username")) {
+			$username = $db->f("username");
+			$newinnhost = $db->f("newinnhost");
+			$newinnport = $db->f("newinnport");
+			$newgroups = addslashes($db->f("newgroups"));
+			$db->query("UPDATE _my_dns SET innhost='{$newinnhost}',innport={$newinnport},groups='{$newgroups}' WHERE name='{$username}'");
+			$db->query("UPDATE _inn_req SET agree=1 WHERE id={$agree}");
+		}
+	}
+	
 	$db2 = new db_mysql($syscfg['mysql']);
 	$db2->connect();
 	$db->query("SELECT _inn_req.id,username,newinnhost,newinnport,newgroups,reqtime,innhost,innport,groups FROM _inn_req,_my_dns WHERE agree=0 AND _inn_req.username=_my_dns.name");
