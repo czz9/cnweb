@@ -28,9 +28,9 @@ ul {list-style:square}
 #divMenu a {
 	color:#000000;
 }
-#divMain {
-	border-left:1px solid #BCBCBC;
-	float:left;
+#divMain{
+	margin-left:200px;
+	border-left:1px solid #BCBCBC
 }
 #divFoot {
 	clear:both;
