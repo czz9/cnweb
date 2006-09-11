@@ -46,8 +46,8 @@ function listnews() {
 
     $newslist .= "</table>\n";
 
-    $string = <<<__EOF__
-     <table border="0" width="100%" align="center" bgcolor="#efefef">
+    $string .= <<<__EOF__
+     <table border="0" align="center" bgcolor="#efefef">
      <tr>
      <td>
 	$newslist
@@ -95,8 +95,8 @@ function listgroups() {
 
     $grouplist .= "</table>\n";
 
-    $string = <<<__EOF__
-     <table border="0" width="100%" align="center" bgcolor="#efefef">
+    $string .= <<<__EOF__
+     <table border="0" align="center" bgcolor="#efefef">
      <tr>
      <td>
 	$grouplist
