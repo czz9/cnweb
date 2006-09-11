@@ -15,6 +15,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="cn.bbs.* newsgroups administration">
+<meta name="keywords" content="cn.bbs.*,china,chinese,bbs,usenet,newsgroups">
+<meta name="robots" content="index,follow">
+<meta name="copyright" content="Copyright 2001-2006. cn.bbs.* Administrative Group. All Rights Reserved.">
 <title>cn.bbs.* newsgroups administration</title>
 <link href="default.css" rel="stylesheet" type="text/css" />
 </head>
