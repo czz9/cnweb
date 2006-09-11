@@ -1,7 +1,7 @@
 <?php
 //头部文件
 //author: hightman@hightman.net
-//$Id: header.php,v 1.2 2003/03/23 17:00:47 czz Exp $
+//$Id$
 
 
 $PHP_SELF = $HTTP_SERVER_VARS['PHP_SELF'];
@@ -51,15 +51,11 @@ header("Cache-Control: post-check=1, pre-check=1");
 <link href="default.css" rel="stylesheet" type="text/css" />
 </head>
 <body bgcolor="#FFFFFF">
+<div style="float:right;padding-top:30px;padding-right:5px"><a href="http://www.cn-bbs.org/index.php?#Documentation_and_FAQs">HELP</a></div>
 <div id="divLogo"><a href="index.php"><img src="logo.gif" width="369" height="50" border="0" /></a></div>
 <div id="divMenu">
 	<br />
-	<div class="menutitle">新闻组数据</div>
-	<ul>
-		<li><a href="listnews.php">服务器列表</a></li>
-		<li><a href="listgroup.php">新闻组列表</a></li>
-		<li><a href="http://www.cn-bbs.org/index.php?c">转信介绍与文档</a></li>
-	</ul>
+	<div class="menutitle"><a href="http://www.cn-bbs.org/index.php?c">转信介绍与文档</a></div>
 	<div class="menutitle">转信申请</div>
 <?php
 	print("\t<ul>\n" . $headmsg . "\t</ul>");
