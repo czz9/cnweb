@@ -61,7 +61,7 @@ header("Cache-Control: post-check=1, pre-check=1");
 	print("\t<ul>\n" . $headmsg . "\t</ul>");
 	if($action == "admin") {
 ?>
-	<div class="menutitle">管理功能</div>
+	<div class="menutitle"><a href="admin.php">管理功能</a></div>
 	<ul>
 <?php
 		foreach($does as $key => $value)
