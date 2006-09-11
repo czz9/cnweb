@@ -4,6 +4,7 @@
 //$Id$
 
 require("send.php");
+require("funcs.php");
 
 function adm_default() {
     global $string;
@@ -809,6 +810,7 @@ function check_innreq() {
 	$db->connect();
 	
 	// 批准申请
+	$agree = 0;
 	$agree = &cgi_var('agree');
 	if($agree > 0) {
 		$db->query_first("SELECT username,newinnhost,newinnport,newgroups FROM _inn_req WHERE id={$agree}");
@@ -822,38 +824,21 @@ function check_innreq() {
 		}
 	}
 	
+	// 拒绝申请
+	$disagree = 0;
+	$disagree = &cgi_var('disagree');
+	if($disagree > 0) {
+		$db->query("DELETE FROM _inn_req WHERE id={$disagree}");
+	}
+	
 	$db2 = new db_mysql($syscfg['mysql']);
 	$db2->connect();
-	$db->query("SELECT _inn_req.id,username,newinnhost,newinnport,newgroups,reqtime,innhost,innport,groups FROM _inn_req,_my_dns WHERE agree=0 AND _inn_req.username=_my_dns.name");
+	$db->query("SELECT _inn_req.id,username,newinnhost,newinnport,newgroups,reqtime,innhost,innport,groups FROM _inn_req,_my_dns WHERE agree=0 AND _inn_req.username=_my_dns.name ORDER BY id ASC");
 	$db2->query("SELECT * FROM _news_grp WHERE type!=2 ORDER BY type");
 	
 	while($tmp = $db->fetch_array()) {
-		$string .= "<p>申请单序号：" . $tmp["id"] . "<br />";
-		$string .= "申请人账号：" . $tmp["username"] . "<br />";
-		if($tmp["innhost"] != $tmp["newinnhost"])
-			$string .= "BBS站域名变更： " . $tmp["innhost"] . " => " . $tmp["newinnhost"] . "<br />";
-		if($tmp["innport"] != $tmp["newinnport"])
-			$string .= "innbbsd端口变更：" . $tmp["innport"] . " => " . $tmp["newinnport"] . "<br />";
-		$oldgroup = unserialize($tmp["groups"]);
-		$newgroup = unserialize($tmp["newgroups"]);
-		$db2->seek(0);
-		while($ngi = $db2->fetch_array()) {
-			if(isset($oldgroup[$ngi["id"]])) {
-				if(isset($newgroup[$ngi["id"]])) {
-					if($oldgroup[$ngi["id"]] != $newgroup[$ngi["id"]]) 
-						$string .= "转信版面变更： " . $oldgroup[$ngi["id"]] . " => " . $newgroup[$ngi["id"]] . " (" . $ngi["name"] . "/" . $ngi["title"] . ")<br />";
-				}
-				else {
-					$string .= "取消新闻组： " . $ngi["name"] . "/" . $ngi["title"] . "<br />";
-				}
-			}
-			else {
-				if(isset($newgroup[$ngi["id"]])) {
-					$string .= "增加新闻组： " . $ngi["name"] . "/" . $ngi["title"] . " 转信到 " . $newgroup[$ngi["id"]] . " 版面<br />";
-				}
-			}
-		}
-		$string .= "</p>";
+		$string .= display_inn_req($tmp, $db2);
+		$string .= "<p><div align=\"center\"><a href=\"admin.php?do=check_innreq&agree={$tmp["id"]}\">批准这个申请</a> <a href=\"admin.php?do=check_innreq&disagree={$tmp["id"]}\">拒绝这个申请</a></div>";
 	}
 	
 	$db2->close();
