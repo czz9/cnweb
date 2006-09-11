@@ -1,7 +1,7 @@
 <?php
 /*
  * MySQL DataBase Class, Modified From PHPLib by hightman.
- * $Id: db_mysql.php,v 1.1.1.1 2002/08/21 07:42:45 czz Exp $
+ * $Id$
  */ 
 
 class db_mysql {

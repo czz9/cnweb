@@ -1,6 +1,6 @@
 <?php
 // numric auth. hehe.. by hightman@hightman.net
-// $Id: img_rand.php,v 1.3 2003/12/06 11:51:30 czz Exp $
+// $Id$
 
 $radix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
 $maxlen = 4;

@@ -2,7 +2,7 @@
 // news server list
 // CN-BBS.ORG free domain register system.
 // write by <hightman.bbs@bbs.yi.org> IN php. for czz@smth
-// $Id: listnews.php,v 1.4 2003/12/06 12:11:50 czz Exp $
+// $Id$
 
 include ("config.php");
 require ("db_mysql.php");

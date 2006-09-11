@@ -2,7 +2,7 @@
 // newsgroup list
 // CN-BBS.ORG free domain register system.
 // write by <hightman.bbs@bbs.yi.org> IN php. for czz@smth
-// $Id: listgroup.php,v 1.2 2003/12/06 11:51:30 czz Exp $
+// $Id$
 
 include ("config.php");
 require ("db_mysql.php");

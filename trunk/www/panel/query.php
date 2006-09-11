@@ -2,7 +2,7 @@
 // bbs list
 // CN-BBS.ORG free domain register system.
 // write by <hightman.bbs@bbs.yi.org> IN php. for czz@smth
-// $Id: query.php,v 1.2 2003/12/06 11:51:30 czz Exp $
+// $Id$
 
 include("config.php");
 $id = &cgi_var('id');

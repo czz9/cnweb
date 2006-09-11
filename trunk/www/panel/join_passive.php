@@ -2,7 +2,7 @@
 // join passive innbbs
 // CN-BBS.ORG free domain register system.
 // write by <hightman.bbs@bbs.yi.org> IN php. for czz@smth
-// $Id: join_passive.php,v 1.2 2004/05/31 18:29:53 czz Exp $
+// $Id$
 
 include ("config.php");
 if (!is_login()) {

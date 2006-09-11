@@ -1,7 +1,7 @@
 <?php
 // CN-BBS.ORG free domain register system.
 // write by <hightman.bbs@bbs.yi.org> IN php. for czz@smth
-// $Id: config.php,v 1.6 2004/05/31 18:29:53 czz Exp $
+// $Id$
 
 define ("_HOST_ACTIVE_",	0x001);
 define ("_HAVE_WILDCARD_",	0x002);
