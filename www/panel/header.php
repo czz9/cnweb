@@ -55,7 +55,10 @@ header("Cache-Control: post-check=1, pre-check=1");
 <div id="divLogo"><a href="index.php"><img src="logo.gif" width="369" height="50" border="0" /></a></div>
 <div id="divMenu">
 	<br />
-	<div class="menutitle"><a href="http://www.cn-bbs.org/index.php?c">转信介绍与文档</a></div>
+	<div class="menutitle"><a href="https://panel.cn-bbs.org/">控制面板</a></div>
+	<ul>
+		<li><a href="http://www.cn-bbs.org/" target="_blank">cn.bbs.* 首页</a></li>
+	</ul>
 	<div class="menutitle">转信申请</div>
 <?php
 	print("\t<ul>\n" . $headmsg . "\t</ul>");
