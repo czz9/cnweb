@@ -124,7 +124,6 @@ function adm_default() {
 	<br>name: Server 域名，如 news.maily.cic.tsinghua.edu.cn </blockquote></li>
 	<li> 强行修改用户资料后用户通过认证，且自动激活！</li>
 	</ul>
-	</center>
 __EOF__;
 }
 
