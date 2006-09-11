@@ -18,7 +18,7 @@
 <tr align="center"><th>服务器域名</th><th>状态</th><th>FQDN/IP</th><th>服务对象</th></tr>
 <?php
 	while($record = mysql_fetch_array($result)) {
-		print("<tr><td><a href=" . $record["url"] . ">" . $record["name"] . "</a></td><td>" . $ststr[$record["status"]] . "</td><td>" . $record["host"] . "</td><td>" . $record["comment"] . "</td></tr>\n");
+		print("<tr><td><a href=" . $record["url"] . " target=_blank>" . $record["name"] . "</a></td><td>" . $ststr[$record["status"]] . "</td><td>" . $record["host"] . "</td><td>" . $record["comment"] . "</td></tr>\n");
 	}
 ?>
 </table>
