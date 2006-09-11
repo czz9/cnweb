@@ -51,7 +51,7 @@ header("Cache-Control: post-check=1, pre-check=1");
 <link href="default.css" rel="stylesheet" type="text/css" />
 </head>
 <body bgcolor="#FFFFFF">
-<div style="float:right;padding-top:30px;padding-right:5px"><a href="http://www.cn-bbs.org/index.php?#Documentation_and_FAQs">HELP</a></div>
+<div style="float:right;padding-top:30px;padding-right:5px"><a href="http://www.cn-bbs.org/index.php?#Documentation_and_FAQs" target="_blank">帮助</a></div>
 <div id="divLogo"><a href="index.php"><img src="logo.gif" width="369" height="50" border="0" /></a></div>
 <div id="divMenu">
 	<br />
