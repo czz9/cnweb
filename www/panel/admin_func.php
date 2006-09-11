@@ -3,7 +3,7 @@
 //hightman@hightman.net
 //$Id$
 
-require("send.php");
+//require("send.php");
 require("funcs.php");
 
 function listnews() {

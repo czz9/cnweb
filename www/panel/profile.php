@@ -2,7 +2,7 @@
 // CN-BBS.ORG free domain register system.
 // write by <hightman.bbs@bbs.yi.org> IN php. for czz@smth
 // profile.php
-// $Id: profile.php,v 1.3 2004/05/31 18:29:53 czz Exp $
+// $Id$
 
 include ("config.php");
 

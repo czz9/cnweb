@@ -1,7 +1,7 @@
 <?php
 // CN-BBS.ORG free domain register system.
 // write by <hightman.bbs@bbs.yi.org> IN php. for czz@smth
-// $Id: signup.php,v 1.1.1.1 2002/08/21 07:42:45 czz Exp $
+// $Id$
 
 include ("config.php");
 

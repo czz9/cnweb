@@ -2,7 +2,7 @@
 // CN-BBS.ORG free domain register system.
 // write by <hightman.bbs@bbs.yi.org> IN php. for czz@smth
 // lostpw.php
-// $Id: lostpw.php,v 1.2 2003/03/23 17:00:47 czz Exp $
+// $Id$
 
 include ("config.php");
 $name = &cgi_var('name');
