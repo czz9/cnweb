@@ -11,6 +11,7 @@ if (!is_login()) {
 }
 
 require ("db_mysql.php");
+require ("funcs.php");
 
 // Create Mysql Class
 //$db = db_mysql::connect($syscfg['mysql']);
@@ -61,7 +62,7 @@ if ($msg == "") {
 	
 	$db->query_first("SELECT innhost, innport, groups FROM _my_dns WHERE name = '$name' LIMIT 1");
 	if(($innhost == $db->f("innhost")) && ($innport == $db->f("innport")) && ($groups == $db->f("groups"))) {
-		$string = "<p align=\"center\"><span style=\"color:#FF0000\">您没有作任何修改。</span>如果您以前提交过转信申请，那么您以前提交的申请已经取消。<a href=\"javascript:history.go(-1);\">点击这里返回</a>。</p>\n";
+		$string = "<p align=\"center\"><span style=\"color:#FF0000\">您没有作任何修改。</span>如果您以前提交过转信申请，那么您以前提交的申请已经取消。<a href=\"joininn.php\">点击这里返回</a>。</p>\n";
 		$db->query("DELETE FROM _inn_req WHERE username = '$name' AND agree=0");
 	}
 	else {
@@ -84,10 +85,17 @@ if ($msg == "") {
 	}
 }
 else {
-	$db->query_first("SELECT COUNT(*) 'count' FROM _inn_req WHERE username='$name' LIMIT 1");
-	if($db->f("count") > 0) {
+	$db->query("SELECT _inn_req.id,username,newinnhost,newinnport,newgroups,reqtime,innhost,innport,groups FROM _inn_req,_my_dns WHERE agree=0 AND _inn_req.username=_my_dns.name AND name='$name' LIMIT 1");
+	if($tmp = $db->fetch_array()) {
+		$db2 = new db_mysql($syscfg['mysql']);
+		$db2->connect();
+		$db2->query("SELECT * FROM _news_grp WHERE type!=2 ORDER BY type");
 		$resubmit = true;
-		$resubmit_notice = "<tr><td colspan=\"2\"><div align=\"center\" style=\"border:1px solid #FF6600;padding:10px\">您已经提交过一份转信申请，管理员尚未审核，您如果再次提交申请将覆盖上次的申请。</div></td></tr>";
+		$resubmit_notice = "<tr><td colspan=\"2\"><div align=\"center\" style=\"text-align:left;border:1px solid #FF6600;padding:10px\"><p>您已经提交过一份转信申请如下，管理员尚未审核，您如果再次提交申请将覆盖上次的申请。</p>";
+		$resubmit_notice .= display_inn_req($tmp, $db2);
+		$resubmit_notice .= "</div></td></tr>";
+		$db2->close();
+		
 	}
 	else {
 		$resubmit = false;
