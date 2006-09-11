@@ -1,7 +1,7 @@
 <?php
 //admin.php
 //hightman@hightman.net
-//$Id: admin.php,v 1.3 2003/12/06 11:51:30 czz Exp $
+//$Id$
 include("config.php");
 
 $PHP_AUTH_USER = &pre_var('PHP_AUTH_USER');
@@ -18,7 +18,10 @@ $PHP_AUTH_PW = &pre_var('PHP_AUTH_PW');
 }*/
 
 $action = "admin";
-$does = array(	"gen_innd" => "news配置",
+$does = array(
+		"listnews" => "服务器列表",
+		"listgroups" => "新闻组列表",
+		"gen_innd" => "news配置",
 		"gen_named" => "named配置",
 		"reload_named" => "named更新",
 		"listbbs" => "BBS列表",
