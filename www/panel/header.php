@@ -56,10 +56,6 @@ header("Cache-Control: post-check=1, pre-check=1");
 <div id="divMenu">
 	<br />
 	<div class="menutitle"><a href="https://panel.cn-bbs.org/">控制面板</a></div>
-	<ul>
-		<li><a href="http://www.cn-bbs.org/" target="_blank">cn.bbs.* 首页</a></li>
-	</ul>
-	<div class="menutitle">转信申请</div>
 <?php
 	print("\t<ul>\n" . $headmsg . "\t</ul>");
 	if($action == "admin") {
