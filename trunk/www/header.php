@@ -19,6 +19,7 @@
 <meta name="keywords" content="cn.bbs.*,china,chinese,bbs,usenet,newsgroups">
 <meta name="robots" content="index,follow">
 <meta name="copyright" content="Copyright 2001-2006. cn.bbs.* Administrative Group. All Rights Reserved.">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.cn-bbs.org/rss.php" />
 <title>cn.bbs.* newsgroups administration</title>
 <link href="default.css" rel="stylesheet" type="text/css" />
 </head>
