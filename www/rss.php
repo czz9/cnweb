@@ -6,9 +6,9 @@
 	$str .= "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n";
 	$str .="\t<rss version=\"2.0\">\n";
 	$str .="\t\t<channel>\n";
-	$str .="\t\t\t<title>cn-bbs.org 新闻</title>\n";
+	$str .="\t\t\t<title>cn.bbs.* 新闻</title>\n";
 	$str .="\t\t\t<description>www.cn-bbs.org 网站首页新闻</description>";
-	$str .="\t\t\t<link>http://www.cn-bbs.org/index.php?c</link>\n";
+	$str .="\t\t\t<link>http://www.cn-bbs.org/index.php?c#Mainpage_News</link>\n";
 	$str .="\t\t\t<language>zh-cn</language>\n";
 	$str .="\t\t\t<generator>cnweb rss</generator>\n";
 	$str .="\t\t\t<lastBuildDate>{$lastBuildDate}</lastBuildDate>\n";
@@ -21,7 +21,7 @@
 		$str .= "\t\t\t<item>\n";
 		$str .= "\t\t\t\t<title>" . $record["title"] . "</title>\n";
 		$str .= "\t\t\t\t<link>http://www.cn-bbs.org/viewnews.php?id=" . $record["id"] . "</link>\n";
-		$str .= "\t\t\t\t<author>cn-bbs.org</author>\n";
+		$str .= "\t\t\t\t<author>cn.bbs.* Administrative Group</author>\n";
 		$str .= "\t\t\t\t<pubDate>{$pubDate}</pubDate>\n";
 		$str .= "\t\t\t\t<guid>http://www.cn-bbs.org/viewnews.php?id=" . $record["id"] . "</guid>\n";
 		$str .= "\t\t\t\t<description><![CDATA[" . $record["content"] . "]]></description>\n";
