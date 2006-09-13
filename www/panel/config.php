@@ -62,7 +62,7 @@ $syscfg['rprog']	= "/web/tmp/update_dns";		// 可执行文件。(update_dns.c)
 $syscfg['uid']		= 0;			// 执行系统命令的 uid  [update_dns.c]
 $syscfg['gid']		= 0;			// 同上
 $syscfg['restart']	= 0;			// 同上，是否重启 named.
-$syscfg['mpath']	= "/news/bin/inews -h";	// mail post程序 的位置.
+$syscfg['mpath']	= "/opt/news/bin/inews -h";	// mail post程序 的位置.
 $syscfg['newsgrp']	= "cn.bbs.admin";	// 记录发送到的组。
 $syscfg['faqfile']	= "./FAQ";		// FAQ文件
 
