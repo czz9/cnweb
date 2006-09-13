@@ -5,14 +5,24 @@
 // $Id$
 
 include("config.php");
-$id = &cgi_var('id');
-
-if (!$id) die ("Empty Input!");
 
 if(isset($_GET["f"]))
 	$f = true;
 else
 	$f = false;
+
+if($f) {
+	if(is_login())
+		$id = &my_session_get('dns_name');
+	else
+		exit();
+}
+else
+	$id = &cgi_var('id');
+		
+if (!$id) die ("Empty Input!");
+
+
 
 require("db_mysql.php");
 //$db = db_mysql::connect($syscfg['mysql']);
@@ -28,7 +38,7 @@ while($db->next_record()) {
 }
 $db->close();
 
-$tmp = $db->query_first("SELECT name, host, xmode, bbsname, bbsport, bbsdept, innsrv, bbsid, email, groups, introduce FROM _my_dns WHERE id = '$id' OR name = '$id' LIMIT 1");
+$tmp = $db->query_first("SELECT name, host, xmode, bbsname, bbsport, bbsdept, innsrv, bbsid, email, groups, introduce, lastip FROM _my_dns WHERE id = '$id' OR name = '$id' LIMIT 1");
 $db->close();
 $innsrv = $db->f('innsrv');
 
@@ -63,8 +73,10 @@ foreach($tmp['groups'] as $key => $value) {
 if($f) {
 	include("header.php");
 	print("<h3>您的账号信息： $tmp[name]</h3>\n");
+	$loginip = "\n上次登录的IP： " . $tmp['lastip'];
 }
 else {
+	$loginip = "";
 	print <<<__EOF__
 <html>
 <head>
@@ -77,7 +89,7 @@ __EOF__;
 }
 print <<<__EOF__
 <pre style="font-size: 12px">
-登录名称: <b>$tmp[name][.$syscfg[dn]]</b>
+登录名称: <b>$tmp[name][.$syscfg[dn]]</b>$loginip
 BBS中文名称: $tmp[bbsname]
 BBS所属单位: $tmp[bbsdept]
 BBS地址: $tmp[host]
