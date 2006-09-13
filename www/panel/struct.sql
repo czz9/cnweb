@@ -64,6 +64,8 @@ CREATE TABLE `_my_dns` (
   `authtime` int(10) unsigned NOT NULL default '0',
   `groups` text NOT NULL,
   `introduce` text NOT NULL,
+  `thisip` varchar(60) NOT NULL default '',
+  `lastip` varchar(60) NOT NULL default '',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `name` (`name`),
   KEY `authcode` (`authcode`,`name`,`xmode`),

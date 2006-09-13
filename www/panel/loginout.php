@@ -30,10 +30,12 @@ if (isset($name) && isset($password)) {
     if (!isset($xmode))
 	$errmsg = "<p algin=\"center\"><font color=\"red\" size=\"3\">登录出错，请仔细回忆您的密码重新登录！</font></p>\n";
     elseif ($xmode & _ACCT_ACTIVE_) {
-	my_session_set('dns_name', $name);
-	my_session_set('dns_pass', $password);
-	header("Location: query.php?f&id=" . $name);
-	exit();
+		my_session_set('dns_name', $name);
+		my_session_set('dns_pass', $password);
+		$db->query("UPDATE _my_dns SET lastip=thisip WHERE name='$name'");
+		$db->query("UPDATE _my_dns SET thisip='" . $_SERVER['REMOTE_ADDR'] . "' WHERE name='$name'");
+		header("Location: query.php?f");
+		exit();
     }
     else {
 	$showform = 0;
