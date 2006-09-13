@@ -48,7 +48,7 @@ header("Cache-Control: post-check=1, pre-check=1");
 <head>
 <title><?php echo $syscfg['title']?> - <?php echo $columns[$action]?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="default.css" rel="stylesheet" type="text/css" />
+<link href="../default.css" rel="stylesheet" type="text/css" />
 </head>
 <body bgcolor="#FFFFFF">
 <div style="float:right;padding-top:30px;padding-right:5px"><a href="http://www.cn-bbs.org/index.php?#Documentation_and_FAQs" target="_blank">帮助</a></div>
