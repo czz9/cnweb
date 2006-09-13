@@ -9,6 +9,11 @@ $id = &cgi_var('id');
 
 if (!$id) die ("Empty Input!");
 
+if(isset($_GET["f"]))
+	$f = true;
+else
+	$f = false;
+
 require("db_mysql.php");
 //$db = db_mysql::connect($syscfg['mysql']);
 $db = new db_mysql($syscfg['mysql']);
@@ -55,8 +60,12 @@ reset($tmp['groups']);
 foreach($tmp['groups'] as $key => $value) {
 	$grouplist .= ("<font color=\"green\">" . $value . "</font>\t\t<font color=\"blue\"><a href=\"listgroup.php#" . $groups[$key] . "\" target=\"_blank\">". $groups[$key] . "</a></font>\n");
 }
-
-print <<<__EOF__
+if($f) {
+	include("header.php");
+	print("<h3>您的账号信息： $tmp[name]</h3>\n");
+}
+else {
+	print <<<__EOF__
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -64,6 +73,9 @@ print <<<__EOF__
 </head>
 <body>
 <h3>Query: $tmp[name]</h3>
+__EOF__;
+}
+print <<<__EOF__
 <pre style="font-size: 12px">
 登录名称: <b>$tmp[name][.$syscfg[dn]]</b>
 BBS中文名称: $tmp[bbsname]
@@ -78,8 +90,14 @@ $tmp[introduce]
 转信版与新闻组对应关系:
 $grouplist
 </pre>
+__EOF__;
+if($f)
+	include("footer.php");
+else {
+	print <<<__EOF__
 </body>
 </html>
 __EOF__;
+}
 
 ?>

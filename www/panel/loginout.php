@@ -32,7 +32,7 @@ if (isset($name) && isset($password)) {
     elseif ($xmode & _ACCT_ACTIVE_) {
 	my_session_set('dns_name', $name);
 	my_session_set('dns_pass', $password);
-	header("Location: profile.php");
+	header("Location: query.php?f&id=" . $name);
 	exit();
     }
     else {
