@@ -1,6 +1,9 @@
 body{margin:0px; font-family:Verdana,Arial,Helvetica,sans-serif; font-size:13px}
 a{text-decoration:none; color:#00F}
 ul{list-style:square}
+input, object { background-color: #ffffff; font-size: 12px; border: 1px #cccccc double; font-family: Verdana, Arial, Helvetica, sans-serif; }
+option { background-color: #f3f3f3; color: #51485f }
+textarea { background-color: #ffffff; font-size: 12px ; border: 1px #cccccc double; overflow: auto; clip:rect() }
 .menutitle{margin:10px; padding-left:20px; padding-bottom:5px; border-bottom:1px dashed #9A99BF; font-weight:bold; background-image:url(round.gif); background-repeat:no-repeat; background-position:left top}
 .loginbox{width:80px; height:17px; border:1px dotted #998EC4; background-color:#FFF}
 .loginbtn{height:20px; border:0px; background:none}
