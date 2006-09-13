@@ -16,13 +16,13 @@ $lists = Array(
 		);
 
 if (is_login()) {
-    $columns['loginout'] = "退出本站";
+	$columns['loginout'] = "退出本站";
     $columns['profile'] = "修改资料";
     $columns['joininn'] = "转信申请";
     $columns['innconf'] = "转信配置提示";
 }
 else {
-    $columns['loginout'] = "登录进站";
+	$columns['loginout'] = "登录进站";
     $columns['register'] = "域名申请";
     $columns['active'] = "激活帐号";
     $columns['lostpw'] = "取回密码";
@@ -51,12 +51,35 @@ header("Cache-Control: post-check=1, pre-check=1");
 <link href="../default.css" rel="stylesheet" type="text/css" />
 </head>
 <body bgcolor="#FFFFFF">
-<div style="float:right;padding-top:30px;padding-right:5px"><a href="http://www.cn-bbs.org/index.php?#Documentation_and_FAQs" target="_blank">帮助</a></div>
+<div style="float:right;padding-top:30px;padding-right:5px">
+<?php
+if(is_login()) {
+	$name = &my_session_get('dns_name');
+	print($name . "@cn-bbs.org | ");
+}
+else
+	print("<a href=\"loginout.php\">登录</a> | ");
+?>
+<a href="http://www.cn-bbs.org/index.php?#Documentation_and_FAQs" target="_blank">帮助</a>
+<?php
+if(is_login())
+	print(" | <a href=\"loginout.php\">退出</a>");
+?>
+</div>
 <div id="divLogo"><a href="index.php"><img src="logo.gif" width="369" height="50" border="0" /></a></div>
 <div id="divMenu">
 	<br />
+<?php
+if(is_login()) {
+?>
+	<div class="menutitle"><a href="query.php?f&id=<?php print($name) ?>">控制面板</a></div>
+<?php
+	}
+	else {
+?>
 	<div class="menutitle"><a href="https://panel.cn-bbs.org/">控制面板</a></div>
 <?php
+	}
 	print("\t<ul>\n" . $headmsg . "\t</ul>");
 	if($action == "admin") {
 ?>
