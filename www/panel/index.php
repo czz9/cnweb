@@ -3,5 +3,5 @@
 //hightman@hightman.net
 //$Id$
 
-include("loginout.php");
+include("stat.php");
 ?>
