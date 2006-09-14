@@ -1,7 +1,7 @@
 <?php
 //admin.php
 //hightman@hightman.net
-//$Id$
+//$Id: admin.php 87 2006-09-14 04:15:44Z chenzz $
 include("config.php");
 
 $PHP_AUTH_USER = &pre_var('PHP_AUTH_USER');
