@@ -60,7 +60,7 @@ else {
     $string = <<<__EOF__
 注意: 目前您使用的是 $innmode 转信模式，我们建议您尽快升级到被动模式。
 修改配置后请执行~/innd/ctlinnbbsd reload更新。
-以下是 innbbsd 参考配置，具体情况可能略有不同，请仔细阅读 <a href=help.php>F.A.Q.</a> 文件获得解决。
+以下是 innbbsd 参考配置，具体情况可能略有不同，请仔细阅读 <a href=http://www.cn-bbs.org/index.php?#Documentation_and_FAQs target=_blank>F.A.Q.</a> 文件获得解决。
 # ------------------------------------------------------------------
 # 1. ~/innd/bbsname.bbs
 # ------------------------------------------------------------------

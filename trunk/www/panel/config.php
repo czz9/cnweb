@@ -9,34 +9,13 @@ define ("_ACCT_ACTIVE_",	0x010); // 自已激活
 
 $syscfg['title']	= "cn.bbs.* 控制面板";
 $syscfg['badid']	= Array("shit", "fuck", "tmd",
-				"ns1", "ns",
-				"ns2",
-				"ns3",
-				"mail",
-				"bbs",
-				"king",
-				"nimitz",
-				"sysgp",
-				"fyf",
-				"earth",
-				"sysop",
-				"7net",
-				"amoonearth",
-				"cgi",
-				"forum",
-				"ftp",
-				"jessie",
-				"leoboard",
-				"maple",
-				"news",
-				"top",
-				"wd",
-				"www",
-				"my",
-				"bt",
-				"admin", "campus", "comp", "lang", "literal",
-				"rec", "sci", "soc", "sports", "talk",
-				"blog", "wiki"
+				"ns", "ns1", "ns2",	"ns3", "mail",
+				"www", "www1", "www2", "www3", "www4", "panel",
+				"bbs", "blog", "ftp", "news", "webnews",
+				"7net", "my", "tian",
+				"admin", "arts", "campus", "comp", "culture", "emotion",
+				"game", "lang", "lit", "music", "rec", "sci", "soc", "sport",
+				"lists", "online", "top", "top2",
 				);
 $syscfg['mysql']	= Array(
 				"Host" => "localhost",	// server host
@@ -46,23 +25,22 @@ $syscfg['mysql']	= Array(
 				);
 $syscfg['email']	= "noreply@cn-bbs.org";	// admin email.
 $syscfg['blogmail']	= "";	// blog email.
-$syscfg['url']		= "http://cn-bbs.org/cnweb";
-$syscfg['dn']		= "cn-bbs.org";
+$syscfg['url']		= "https://panel.cn-bbs.org/";
+$syscfg['dn']		= "cn.bbs.*";
 
 //////////////////////////////////////////////////////////////////////
 //// 以下是管理用到的配置
 //////////////////////////////////////////////////////////////////////
 $syscfg['admin']	= Array("czz"=>"password");
-$syscfg['fpath']	= "/web/tmp/cn-bbs.org.tmp";		// 临时文件的位置, chmod a+rw
-$syscfg['dpath']	= "/named/etc/namedb/cn-bbs.org";	// 正式文件的位置, chmod a+r
-$syscfg['ipath']	= "/web/tmp/cn-bbs.org.orig";		// 输入文件, named 的头啊
-$syscfg['rprog']	= "/web/tmp/update_dns";		// 可执行文件。(update_dns.c)
+$syscfg['fpath']	= "/opt/www/htdocs/cnweb/tmp/cn-bbs.org.tmp";		// 临时文件的位置, chmod a+rw
+$syscfg['dpath']	= "/opt/named/chroot/var/named/cn-bbs.org";	// 正式文件的位置, chmod a+r
+$syscfg['ipath']	= "/opt/www/htdocs/cnweb/tmp/cn-bbs.org.orig";		// 输入文件, named 的头啊
+$syscfg['rprog']	= "/opt/www/htdocs/cnweb/tmp/update_dns";		// 可执行文件。(update_dns.c)
 $syscfg['uid']		= 0;			// 执行系统命令的 uid  [update_dns.c]
 $syscfg['gid']		= 0;			// 同上
 $syscfg['restart']	= 0;			// 同上，是否重启 named.
 $syscfg['mpath']	= "/opt/news/bin/inews -h";	// mail post程序 的位置.
 $syscfg['newsgrp']	= "cn.bbs.admin";	// 记录发送到的组。
-$syscfg['faqfile']	= "./FAQ";		// FAQ文件
 
 /*
 From: xxx@xxx.xxx (xxx)
