@@ -20,7 +20,7 @@ if (is_login()) {
     $columns['innconf'] = "转信配置";
 }
 else {
-	$columns['stat'] = "首页";
+	$columns['stat'] = "系统状态";
 	$columns['loginout'] = "系统登录";
     $columns['register'] = "成员注册";
     $columns['active'] = "激活帐号";
@@ -32,9 +32,9 @@ if (! (isset($lists[$action]) || isset($columns[$action]))) die("Access denied!"
 foreach ($columns as $key => $value)
     if ($key != "admin") {
 		if($key == $action)
-	        $headmsg .= "\t\t<li><b>[<a href=\"https://" . $_SERVER["HTTP_HOST"] . "/" . $key . ".php\">" . $value . "</a>]</b></li>\n";
+	        $headmsg .= "\t\t<li><b>[<a href=\"" . $syscfg['url'] . $key . ".php\">" . $value . "</a>]</b></li>\n";
 		else
-	        $headmsg .= "\t\t<li><a href=\"https://" . $_SERVER["HTTP_HOST"] . "/" . $key . ".php\">" . $value . "</a></li>\n";
+	        $headmsg .= "\t\t<li><a href=\"" . $syscfg['url'] . $key . ".php\">" . $value . "</a></li>\n";
     }
 
 header("Expires: Mon, 26 Jul 2000 05:00:00 GMT");    // okay, it will not be expired for ever.
@@ -57,26 +57,26 @@ if(is_login()) {
 	print($name . "@cn-bbs.org | ");
 }
 else
-		print("<a href=\"https://" . $_SERVER["HTTP_HOST"] . "/loginout.php\">登录</a> | ");
+		print("<a href=\"" . $syscfg['url'] . "loginout.php\">登录</a> | ");
 ?>
 <a href="http://www.cn-bbs.org/index.php?#Documentation_and_FAQs" target="_blank">帮助</a>
 <?php
 if(is_login())
-		print(" | <a href=\"https://" . $_SERVER["HTTP_HOST"] . "loginout.php\">退出</a>");
+		print(" | <a href=\"" . $syscfg['url'] . "loginout.php\">退出</a>");
 ?>
 </div>
-<div id="divLogo"><a href="index.php"><img src="https://<?php echo $_SERVER["HTTP_HOST"] ?>/logo.gif" width="369" height="50" border="0" /></a></div>
+<div id="divLogo"><a href="index.php"><img src="<?php echo $syscfg['url'] ?>logo.gif" width="369" height="50" border="0" /></a></div>
 <div id="divMenu">
 	<br />
 <?php
 if(is_login()) {
 ?>
-	<div class="menutitle"><a href="https://<?php echo $_SERVER["HTTP_HOST"] ?>/query.php?f&id=<?php print($name) ?>">控制面板</a></div>
+	<div class="menutitle"><a href="<?php echo $syscfg['url'] ?>query.php?f&id=<?php print($name) ?>">控制面板</a></div>
 <?php
 	}
 	else {
 ?>
-	<div class="menutitle"><a href="https://<?php echo $_SERVER["HTTP_HOST"] ?>/">控制面板</a></div>
+	<div class="menutitle"><a href="<?php echo $syscfg['url'] ?>">控制面板</a></div>
 <?php
 	}
 	print("\t<ul>\n" . $headmsg . "\t</ul>");
@@ -86,7 +86,7 @@ if(is_login()) {
 	<ul>
 <?php
 		foreach($does as $key => $value)
-    		print("\t\t<li><a href=\"" . $_SERVER['PHP_SELF'] . "?do=" . $key . "\">" . $value . "</a></li>");
+    		print("\t\t<li><a href=\"?do=" . $key . "\">" . $value . "</a></li>");
 ?>
 	</ul>
 <?php

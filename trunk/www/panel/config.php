@@ -20,7 +20,7 @@ $syscfg['badid']	= Array("shit", "fuck", "tmd",
 $syscfg['mysql']	= Array(
 				"Host" => "localhost",	// server host
 				"User" => "cnbbs",	// 用户
-				"Password" => "passowrd", //密码
+				"Password" => "password", //密码
 				"Database" => "cnbbs"	// 库名
 				);
 $syscfg['email']	= "noreply@cn-bbs.org";	// admin email.
