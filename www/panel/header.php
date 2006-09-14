@@ -14,10 +14,10 @@ $lists = Array(
 
 if (is_login()) {
 	$columns['stat'] = "首页";
-	$columns['loginout'] = "退出本站";
+	$columns['loginout'] = "退出系统";
     $columns['profile'] = "修改资料";
     $columns['joininn'] = "转信申请";
-    $columns['innconf'] = "转信配置提示";
+    $columns['innconf'] = "转信配置";
 }
 else {
 	$columns['stat'] = "首页";
@@ -65,7 +65,7 @@ if(is_login())
 	print(" | <a href=\"loginout.php\">退出</a>");
 ?>
 </div>
-<div id="divLogo"><a href="index.php"><img src="logo.gif" width="369" height="50" border="0" /></a></div>
+<div id="divLogo"><a href="index.php"><?php if($action == "admin") { ?><img src="../logo.gif" width="369" height="50" border="0" /><?php } else { ?><img src="logo.gif" width="369" height="50" border="0" /><?php } ?></a></div>
 <div id="divMenu">
 	<br />
 <?php
@@ -82,7 +82,7 @@ if(is_login()) {
 	print("\t<ul>\n" . $headmsg . "\t</ul>");
 	if($action == "admin") {
 ?>
-	<div class="menutitle"><a href="admin/admin.php">管理功能</a></div>
+	<div class="menutitle"><a href="index.php">管理功能</a></div>
 	<ul>
 <?php
 		foreach($does as $key => $value)
@@ -93,7 +93,7 @@ if(is_login()) {
 	}
 	else {
 ?>
-	<div class="menutitle"><a href="admin/admin.php">进入管理界面</a></div>
+	<div class="menutitle"><a href="admin/index.php">进入管理界面</a></div>
 <?php
 	}
 ?>
