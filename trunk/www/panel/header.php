@@ -24,8 +24,8 @@ if (is_login()) {
 }
 else {
 	$columns['stat'] = "首页";
-	$columns['loginout'] = "登录进站";
-    $columns['register'] = "域名申请";
+	$columns['loginout'] = "系统登录";
+    $columns['register'] = "成员注册";
     $columns['active'] = "激活帐号";
     $columns['lostpw'] = "取回密码";
 }
