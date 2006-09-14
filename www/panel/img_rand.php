@@ -1,6 +1,5 @@
 <?php
-// numric auth. hehe.. by hightman@hightman.net
-// $Id$
+//$Id$
 
 $radix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
 $maxlen = 4;

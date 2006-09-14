@@ -1,6 +1,4 @@
 <?php
-//admin.php
-//hightman@hightman.net
 //$Id: admin.php 87 2006-09-14 04:15:44Z chenzz $
 include("config.php");
 

@@ -1,7 +1,4 @@
 <?php
-// bbs list
-// CN-BBS.ORG free domain register system.
-// write by <hightman.bbs@bbs.yi.org> IN php. for czz@smth
 // $Id$
 
 include("config.php");

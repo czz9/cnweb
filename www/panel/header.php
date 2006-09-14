@@ -1,8 +1,5 @@
 <?php
-//头部文件
-//author: hightman@hightman.net
 //$Id$
-
 
 $PHP_SELF = $HTTP_SERVER_VARS['PHP_SELF'];
 
