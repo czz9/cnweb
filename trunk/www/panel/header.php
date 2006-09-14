@@ -6,7 +6,7 @@
 
 $PHP_SELF = $HTTP_SERVER_VARS['PHP_SELF'];
 
-if (!isset($action)) $action = "list";
+if (!isset($action)) $action = "stat";
 $lists = Array(
 		    "list" => "BBS 列表",
 		    "listnews" => "服务器列表",
@@ -16,12 +16,14 @@ $lists = Array(
 		);
 
 if (is_login()) {
+	$columns['stat'] = "首页";
 	$columns['loginout'] = "退出本站";
     $columns['profile'] = "修改资料";
     $columns['joininn'] = "转信申请";
     $columns['innconf'] = "转信配置提示";
 }
 else {
+	$columns['stat'] = "首页";
 	$columns['loginout'] = "登录进站";
     $columns['register'] = "域名申请";
     $columns['active'] = "激活帐号";
