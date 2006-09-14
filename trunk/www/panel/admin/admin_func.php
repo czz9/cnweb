@@ -1,13 +1,12 @@
 <?php
 //$Id: admin_func.php 87 2006-09-14 04:15:44Z chenzz $
 
-//require("send.php");
-require("funcs.php");
+require("../funcs.php");
 
 function listnews() {
 	global $syscfg, $string;
 	
-	require("db_mysql.php");
+	require("../db_mysql.php");
 // Create Mysql Class
 //    $db1 = db_mysql::connect($syscfg['mysql']);
 	$db1 = new db_mysql($syscfg['mysql']);
@@ -32,9 +31,9 @@ function listnews() {
 	    $sum = $sum + 1;
 	    if ($db2->f('xmode') & (_INN_PASSIVE_)) {
 		$sum_passive = $sum_passive + 1;
-	        $newslist .= "<a href=query.php?id=" . $db2->f('id') . " target=\"_blank\">" . $db2->f('name') . "</a> ";
+	        $newslist .= "<a href=../query.php?id=" . $db2->f('id') . " target=\"_blank\">" . $db2->f('name') . "</a> ";
 	    } else
-	        $newslist .= "<I><a href=query.php?id=" . $db2->f('id') . " target=\"_blank\">" . $db2->f('name') . "</a></I> ";
+	        $newslist .= "<I><a href=../query.php?id=" . $db2->f('id') . " target=\"_blank\">" . $db2->f('name') . "</a></I> ";
 	}
 	$newslist .= "(" . $sum_passive . "/" . $sum . ")";
 	$newslist .= "</td><td>" . $db1->f('comment') . "</td></tr>\n";
@@ -59,7 +58,7 @@ __EOF__;
 function listgroups() {
 	global $syscfg, $string;
 	
-	require("db_mysql.php");
+	require("../db_mysql.php");
 // Create Mysql Class
 //    $db1 = db_mysql::connect($syscfg['mysql']);
 	$db1 = new db_mysql($syscfg['mysql']);
@@ -81,9 +80,9 @@ function listgroups() {
 	    $sum = $sum + 1;
 	    if ($db2->f('xmode') & (_INN_PASSIVE_)) {
 		$sum_passive = $sum_passive + 1;
-		$grouplist .= "<a href=query.php?id=" . $db2->f('id') . " target=\"_blank\">" . $db2->f('name') . "</a> ";
+		$grouplist .= "<a href=../query.php?id=" . $db2->f('id') . " target=\"_blank\">" . $db2->f('name') . "</a> ";
 	    } else
-		$grouplist .= "<I><a href=query.php?id=" . $db2->f('id') . " target=\"_blank\">" . $db2->f('name') . "</a></I> ";
+		$grouplist .= "<I><a href=../query.php?id=" . $db2->f('id') . " target=\"_blank\">" . $db2->f('name') . "</a></I> ";
 	}
 	$grouplist .= "(" . $sum_passive . "/" . $sum . ")";
 	$grouplist .= "</td></tr>\n";
@@ -128,7 +127,7 @@ __EOF__;
 function gen_innd() {
     global $syscfg, $string;
     
-    require("db_mysql.php");
+    require("../db_mysql.php");
 //    $db = db_mysql::connect($syscfg['mysql']);
 	$db = new db_mysql($syscfg['mysql']);
     $db->connect();
@@ -253,7 +252,7 @@ function gen_named() {
     $tmp_str = trim($tmp_str);
     $tmp_str = str_replace("\r", "", $tmp_str);
 
-    require("db_mysql.php");
+    require("../db_mysql.php");
 //    $db = db_mysql::connect($syscfg['mysql']);    
 	$db = new db_mysql($syscfg['mysql']);
     $db->connect();
@@ -327,7 +326,7 @@ function reload_named() {
 function check_dns() {
     global $syscfg, $string, $PHP_SELF;
 
-    require("db_mysql.php");
+    require("../db_mysql.php");
 //    $db = db_mysql::connect($syscfg['mysql']);    
 	$db = new db_mysql($syscfg['mysql']);
     $db->connect();
@@ -514,7 +513,7 @@ __EOF__;
     elseif ($r == 'del') {
 	$db->query("DELETE FROM _my_dns WHERE id = '$id'");
 	$string .= "<p align=\"center\"><font size=\"4\"><b>删除成功！！</b></font> <br><br>\n"
-	. "<a href=\"" . $PHP_SELF . "?do=check_dns\">继续审核</a> <a href=\"list.php\">返回主页</a></p>\n";
+	. "<a href=\"" . $PHP_SELF . "?do=check_dns\">继续审核</a> <a href=\"../list.php\">返回主页</a></p>\n";
     }
     else {
 	$varibles = array('name', 'email', 'host', 'mx1', 'mx2', 'ns1', 'ns2', 'bbsid', 'bbsname', 'bbsport', 'bbsdept', 'bbsonline', 'bbslogin', 'xmode', 'wildcard', 'innsrv', 'oinnsrv', 'inntype');
@@ -552,7 +551,7 @@ __EOF__;
 	
 	$db->query("UPDATE _my_dns SET name = '$name', host = '$host', mx1 = '$mx1', mx2 = '$mx2', ns1 = '$ns1', ns2 = '$ns2', xmode = '$xmode', bbsname = '$bbsname', bbsport = '$bbsport', bbsdept = '$bbsdept', bbsonline = '$bbsonline', bbslogin = '$bbslogin', innsrv = '$innsrv', bbsid = '$bbsid', email = '$email', introduce = '$introduce' WHERE id = '$id' OR name = '$id'");
 	$string .= "<p align=\"center\"><font size=\"4\"><b>修改成功！！</b></font> <br><br>\n"
-	. "<a href=\"" . $PHP_SELF . "?do=check_dns\">继续审核</a> <a href=\"list.php\">返回主页</a></p>\n";
+	. "<a href=\"" . $PHP_SELF . "?do=check_dns\">继续审核</a> <a href=\"../list.php\">返回主页</a></p>\n";
 
 	$mhdr = "From: " . $syscfg['email'] . "\r\nReply-To: " . $syscfg['email'] . "\r\nX-Mailer: php program by hightman.";
 
@@ -745,7 +744,7 @@ function acct_purge() {
 __EOF__;
     }
     else {
-	require("db_mysql.php");
+	require("../db_mysql.php");
 
 	$expire = time() - ($day * 86400);
 	$active = _ACCT_ACTIVE_;
@@ -762,7 +761,7 @@ __EOF__;
 function post_mails(){//add by everlove<levels@shuoshuo.net>
 	global $syscfg,$string,$PHP_SELF;
 
-	require("db_mysql.php");
+	require("../db_mysql.php");
 //	$db = db_mysql::connect($syscfg['mysql']);
 	$db = new db_mysql($syscfg['mysql']);
     $db->connect();
@@ -806,7 +805,7 @@ function sendmail(){
 function check_ainn() {
     global $syscfg, $string;
 
-    require("db_mysql.php");
+    require("../db_mysql.php");
 //    $db = db_mysql::connect($syscfg['mysql']);
 	$db = new db_mysql($syscfg['mysql']);
     $db->connect();
@@ -826,7 +825,7 @@ function check_ainn() {
 function check_pinn() {
     global $syscfg, $string;
 
-    require("db_mysql.php");
+    require("../db_mysql.php");
 //    $db = db_mysql::connect($syscfg['mysql']);
 	$db = new db_mysql($syscfg['mysql']);
     $db->connect();
@@ -846,7 +845,7 @@ function check_pinn() {
 function listbbs() {
 	global $syscfg, $string;
 
-	require("db_mysql.php");
+	require("../db_mysql.php");
 	
 	$valid = _HOST_ACTIVE_;
 	$active = _ACCT_ACTIVE_;
@@ -860,7 +859,7 @@ function listbbs() {
 	$db->connect();
 	$db->query("SELECT id, name, host, bbsname, bbsport, bbsdept, innsrv FROM _my_dns WHERE (xmode & $valid) AND (xmode & $active) LIMIT $start, $limit");
 	
-	$tmp_str = "<form action=\"query.php\" style=\"margin: 0px\" target=\"_blank\">";
+	$tmp_str = "<form action=\"../query.php\" style=\"margin: 0px\" target=\"_blank\">";
 	if ($start != 0)
 		$tmp_str .= "<a href=\"" . $_SERVER['PHP_SELF'] . "?start=" . ($start - $limit) . "\">&lt;&lt; 上" . $limit . "个</a>\n";
 	
@@ -885,7 +884,7 @@ __EOF__;
 		$flag = ("<font color=\"red\">√</font>");
 		$string .= <<<__EOF__
 		<tr bgcolor="#fafafa" align="center">
-		<td><a href="query.php?id=$tmp[id]" target="_blank">$tmp[bbsname]</a></td>
+		<td><a href="../query.php?id=$tmp[id]" target="_blank">$tmp[bbsname]</a></td>
 		<td><a href="telnet:$tmp[host]:$tmp[bbsport]">$tmp[name].$syscfg[dn]</a></td>
 		<td>$tmp[bbsport]</td>
 		<td>$tmp[bbsdept]</td>
@@ -903,7 +902,7 @@ __EOF__;
 function check_innreq() {
 	global $syscfg, $string;
 
-	require("db_mysql.php");
+	require("../db_mysql.php");
 	$db = new db_mysql($syscfg['mysql']);
 	$db->connect();
 	
