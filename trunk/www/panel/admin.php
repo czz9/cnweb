@@ -8,14 +8,14 @@ $PHP_AUTH_USER = &pre_var('PHP_AUTH_USER');
 $PHP_AUTH_PW = &pre_var('PHP_AUTH_PW');
 
 //un authenticate
-/*if (!isset($syscfg['admin'][$PHP_AUTH_USER]) || ($syscfg['admin'][$PHP_AUTH_USER] != $PHP_AUTH_PW)) {
+if (!isset($syscfg['admin'][$PHP_AUTH_USER]) || ($syscfg['admin'][$PHP_AUTH_USER] != $PHP_AUTH_PW)) {
     header("WWW-Authenticate: Basic realm=\"" . $syscfg['dn'] . " 管理入口\""); 
     header("Status: 401 Unauthorized");
     header("HTTP/1.0 401 Unauthorized");
     echo "<h4>403: Forbidden</h4>\n";
     echo "Access deined!  Please contact with <i>Administrator</i> or <a href=\"list.php\">back</a>.\n";
     exit();
-}*/
+}
 
 $action = "admin";
 $does = array(
