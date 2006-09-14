@@ -76,7 +76,7 @@ if ($msg == "") {
 		. "(请参考<a href=\"innconf.php\">转信配置提示</a>) </p>";
 		if ($xmode) {
 			$string .= "<p align=\"center\"><font color=\"red\" style=\"font-size: 16px\"><b>注意！</b></font>"
-			. "欢迎您加入中国 BBS 转信(cn.bbs.*)的大家庭，在管理员审核通过后，将发信通知您。请您在见信后，在 <a href=\"http://webnews.cn-bbs.org/group//cn.bbs.admin.test\" target=\"_blank\">cn.bbs.admin.test</a> 组进行转入/转出/跨站砍信测试，任何问题请参阅 <a href=help.php>F.A.Q.</a> 或在 <a href=\"http://webnews.cn-bbs.org/group//cn.bbs.admin\" target=\"_blank\">cn.bbs.admin</a> 组寻求帮助。祝您顺利！</p>\n";
+			. "欢迎您加入中国 BBS 转信(cn.bbs.*)的大家庭，在管理员审核通过后，将发信通知您。请您在见信后，在 <a href=\"http://webnews.cn-bbs.org/group//cn.bbs.admin.test\" target=\"_blank\">cn.bbs.admin.test</a> 组进行转入/转出/跨站砍信测试，任何问题请参阅 <a href=http://www.cn-bbs.org/index.php?#Documentation_and_FAQs target=_blank>F.A.Q.</a> 或在 <a href=\"http://webnews.cn-bbs.org/group//cn.bbs.admin\" target=\"_blank\">cn.bbs.admin</a> 组寻求帮助。祝您顺利！</p>\n";
 		}
 		else {
 			$string .= "<p align=\"center\"><font color=\"red\" style=\"font-size: 16px\"><b>注意！</b></font>"
