@@ -1,7 +1,7 @@
 <?php
 //admin_func.php
 //hightman@hightman.net
-//$Id$
+//$Id: admin_func.php 87 2006-09-14 04:15:44Z chenzz $
 
 //require("send.php");
 require("funcs.php");
