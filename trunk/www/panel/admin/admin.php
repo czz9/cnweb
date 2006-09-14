@@ -44,7 +44,7 @@ if (!function_exists($do))
 else
     $do();
 
-include("../header.php");
+include("header.php");
 print $string;
 include("../footer.php");
 ?>
