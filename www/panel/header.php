@@ -82,7 +82,7 @@ if(is_login()) {
 	print("\t<ul>\n" . $headmsg . "\t</ul>");
 	if($action == "admin") {
 ?>
-	<div class="menutitle"><a href="admin.php">管理功能</a></div>
+	<div class="menutitle"><a href="admin/admin.php">管理功能</a></div>
 	<ul>
 <?php
 		foreach($does as $key => $value)
@@ -93,7 +93,7 @@ if(is_login()) {
 	}
 	else {
 ?>
-	<div class="menutitle"><a href="admin.php">进入管理界面</a></div>
+	<div class="menutitle"><a href="admin/admin.php">进入管理界面</a></div>
 <?php
 	}
 ?>
