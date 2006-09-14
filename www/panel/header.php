@@ -13,11 +13,11 @@ $lists = Array(
 		);
 
 if (is_login()) {
-	$columns['stat'] = "首页";
-	$columns['loginout'] = "退出系统";
+	$columns['stat'] = "系统状态";
     $columns['profile'] = "修改资料";
     $columns['joininn'] = "转信申请";
     $columns['innconf'] = "转信配置";
+	$columns['loginout'] = "退出系统";
 }
 else {
 	$columns['stat'] = "系统状态";
@@ -36,6 +36,7 @@ foreach ($columns as $key => $value)
 		else
 	        $headmsg .= "\t\t<li><a href=\"" . $syscfg['url'] . $key . ".php\">" . $value . "</a></li>\n";
     }
+$headmsg .= "\t\t<li><a href=http://www.cn-bbs.org/ target=_blank>转信首页</a></li>\n";
 
 header("Expires: Mon, 26 Jul 2000 05:00:00 GMT");    // okay, it will not be expired for ever.
 header("Date: " . gmdate("D, d M Y H:i:s") . " GMT");
@@ -54,7 +55,7 @@ header("Cache-Control: post-check=1, pre-check=1");
 <?php
 if(is_login()) {
 	$name = &my_session_get('dns_name');
-	print($name . "@cn-bbs.org | ");
+	print("<a href=" . $syscfg['url'] . "query.php?f&id=" . $name . ">" . $name . "@cn-bbs.org</a> | ");
 }
 else
 		print("<a href=\"" . $syscfg['url'] . "loginout.php\">登录</a> | ");
