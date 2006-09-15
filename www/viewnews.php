@@ -18,8 +18,11 @@
 		print <<<___EOF___
 <h3>{$record["title"]}</h3>
 <hr />
-<pre>{$record["content"]}</pre>
+<pre>
+{$record["content"]}
+</pre>
 <div align="right">发布时间：{$record["posttime"]} <a href="index.php?c">返回首页</a></div>
+
 ___EOF___;
 	}
 	else

@@ -9,9 +9,8 @@
 	$query = "SELECT `name`,`title` FROM `_news_grp` WHERE `name` LIKE '%cn.bbs%' ORDER BY `name` ASC";
 	$result = mysql_query($query);
 	while($record = mysql_fetch_array($result)) {
-		print("<a href=http://webnews.cn-bbs.org/group/" . $record["name"] . " target=_blank>" . $record["name"] . "</a>\t" . $record["title"] . "\n");
+		print("<a href=\"http://webnews.cn-bbs.org/group/" . $record["name"] . "\" target=\"_blank\">" . $record["name"] . "</a>\t" . $record["title"] . "\n");
 	}
 	mysql_close();
 ?>
-</pre>
-</div>
+</pre></div>
