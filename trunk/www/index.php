@@ -58,7 +58,7 @@
 			$result = mysql_query("SELECT * FROM _news_srv WHERE status=1 ORDER BY name ASC");
 			$server_list = "<UL>\n";
 			while($record = mysql_fetch_array($result)) {
-				$server_list .= "  <LI><a href=\"http://{$record["name"]}/\" targer=\"_blank\">{$record["name"]}</a>";
+				$server_list .= "  <LI><a href=\"http://{$record["name"]}/\" target=\"_blank\">{$record["name"]}</a>";
 				$server_list .= " ({$record["comment_en"]})</LI>\n";
 			}
 			$server_list .= "</UL>";
