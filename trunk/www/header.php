@@ -51,11 +51,9 @@
 </ul>
 <div class="menutitle"><a href="https://panel.cn-bbs.org/">控制面板</a></div>
 <div align="center">
-<form action="https://panel.cn-bbs.org/loginout.php" method="post" id="frmPanel">
-登录名称：<input type="text" name="name" maxlength="16" class="loginbox" /><br />
+<form action="https://panel.cn-bbs.org/loginout.php" method="post" id="frmPanel" name="frmPanel">登录名称：<input type="text" name="name" maxlength="16" class="loginbox" /><br />
 登录密码：<input type="password" name="password" maxlength="40" class="loginbox" /><br />
-<div style="margin-top:10px"><input type="submit" value="登录" class="loginbtn" />
-<input type="button" value="注册" class="loginbtn" onclick="location.href='https://panel.cn-bbs.org/register.php';" />
+<div style="margin-top:10px"><input type="submit" value="登录" class="loginbtn" /> <input type="button" value="注册" class="loginbtn" onclick="location.href='https://panel.cn-bbs.org/register.php';" />
 <input type="button" value="取回密码" class="loginbtn" onclick="location.href='https://panel.cn-bbs.org/lostpw.php';" /></div>
 </form>
 </div>
