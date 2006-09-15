@@ -1,7 +1,7 @@
 <?php
 //$Id$
 
-$PHP_SELF = $HTTP_SERVER_VARS['PHP_SELF'];
+$PHP_SELF = $_SERVER['PHP_SELF'];
 
 if (!isset($action)) $action = "stat";
 $lists = Array(
