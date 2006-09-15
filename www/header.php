@@ -15,17 +15,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="description" content="cn.bbs.* newsgroups administration">
-<meta name="keywords" content="cn.bbs.*,china,chinese,bbs,usenet,newsgroups">
-<meta name="robots" content="index,follow">
-<meta name="copyright" content="Copyright 2001-2006. cn.bbs.* Administrative Group. All Rights Reserved.">
+<meta name="description" content="cn.bbs.* newsgroups administration" />
+<meta name="keywords" content="cn.bbs.*,china,chinese,bbs,usenet,newsgroups" />
+<meta name="robots" content="index,follow" />
+<meta name="copyright" content="Copyright 2001-2006. cn.bbs.* Administrative Group. All Rights Reserved." />
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.cn-bbs.org/rss.php" />
 <title>cn.bbs.* newsgroups administration</title>
 <link href="default.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div style="float:right;padding-top:30px;padding-right:5px">
-<?php if($chinese) { ?><a href="index.php?e">English Version</a><?php } else { ?><a href="index.php?c"><a href="index.php?c">中文版</a><?php } ?></div><div id="divLogo"><a href="index.php"><img src="logo.gif" width="369" height="50" border="0" /></a></div>
+<?php if($chinese) { ?><a href="index.php?e">English Version</a><?php } else { ?><a href="index.php?c">中文版</a><?php } ?></div><div id="divLogo"><a href="index.php"><img src="logo.gif" width="369" height="50" border="0" alt="cn.bbs.*"/></a></div>
 <div id="divMenu">
 	<br />
 <?php
