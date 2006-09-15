@@ -12,7 +12,7 @@
 	$result = mysql_query("SELECT * FROM _mainpage_news WHERE id=" . $id);
 	$record = mysql_fetch_array($result);
 ?>
-<div style="margin:20px">
+<div id="divMain" style="margin:20px">
 <?php
 	if($record) {
 		print <<<___EOF___
