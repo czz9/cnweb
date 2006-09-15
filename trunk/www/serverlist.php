@@ -15,10 +15,15 @@
 	$result = mysql_query($query);
 ?>
 <table border="1">
-<tr align="center"><th>服务器域名</th><th>状态</th><th>FQDN/IP</th><th>服务对象</th></tr>
+<tr align="center">
+<th>服务器域名</th>
+<th>状态</th>
+<th>FQDN/IP</th>
+<th>服务对象</th>
+</tr>
 <?php
 	while($record = mysql_fetch_array($result)) {
-		print("<tr><td><a href=" . $record["url"] . " target=_blank>" . $record["name"] . "</a></td><td>" . $ststr[$record["status"]] . "</td><td>" . $record["host"] . "</td><td>" . $record["comment"] . "</td></tr>\n");
+		print("<tr>\n<td><a href=\"" . $record["url"] . "\" target=\"_blank\">" . $record["name"] . "</a></td>\n<td>" . $ststr[$record["status"]] . "</td>\n<td>" . $record["host"] . "</td>\n<td>" . $record["comment"] . "</td>\n</tr>\n");
 	}
 ?>
 </table>

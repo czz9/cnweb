@@ -14,7 +14,8 @@
 	}
 	else if(isset($_GET["file"])) {
 ?>
-<div style="margin:20px"><pre>
+<div style="margin:20px">
+<pre>
 <?php
 		switch($_GET["file"]) {
 			case "charter":
