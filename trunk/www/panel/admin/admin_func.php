@@ -1,5 +1,5 @@
 <?php
-//$Id: admin_func.php 87 2006-09-14 04:15:44Z chenzz $
+//$Id$
 
 require("../funcs.php");
 
@@ -512,6 +512,7 @@ __EOF__;
     }
     elseif ($r == 'del') {
 	$db->query("DELETE FROM _my_dns WHERE id = '$id'");
+	cnweb_log("deleted user {$id}.");
 	$string .= "<p align=\"center\"><font size=\"4\"><b>删除成功！！</b></font> <br><br>\n"
 	. "<a href=\"" . $PHP_SELF . "?do=check_dns\">继续审核</a> <a href=\"../list.php\">返回主页</a></p>\n";
     }
@@ -550,12 +551,14 @@ __EOF__;
 	if ($ns2 == $ns1) $ns2 = "";
 	
 	$db->query("UPDATE _my_dns SET name = '$name', host = '$host', mx1 = '$mx1', mx2 = '$mx2', ns1 = '$ns1', ns2 = '$ns2', xmode = '$xmode', bbsname = '$bbsname', bbsport = '$bbsport', bbsdept = '$bbsdept', bbsonline = '$bbsonline', bbslogin = '$bbslogin', innsrv = '$innsrv', bbsid = '$bbsid', email = '$email', introduce = '$introduce' WHERE id = '$id' OR name = '$id'");
+	cnweb_log("modified user info, id={$id}.");
 	$string .= "<p align=\"center\"><font size=\"4\"><b>修改成功！！</b></font> <br><br>\n"
 	. "<a href=\"" . $PHP_SELF . "?do=check_dns\">继续审核</a> <a href=\"../list.php\">返回主页</a></p>\n";
 
 	$mhdr = "From: " . $syscfg['email'] . "\r\nReply-To: " . $syscfg['email'] . "\r\nX-Mailer: php program by hightman.";
 
 	if ($mail_to == 1) {
+		cnweb_log("granted registration of user {$id}.");
 	    $now = date("Y-m-d H:i:s");       
 	    $mailmsg = <<<__EOF__
 尊敬的$name: 您好！
@@ -569,6 +572,7 @@ __EOF__;
 $syscfg[url]
 __EOF__;
 	    if(!@mail($email, "[cn-bbs] 恭喜您，您已经完成注册", $mailmsg, $mhdr))
+		cnweb_log("failed to send email to {$email}.");
 		$string .= "<p><font color=\"red\">警告: 送信到 " . $email . " 失败！</p>\n";
 	    
 	//mail to blog
@@ -582,6 +586,7 @@ __EOF__;
 __EOF__;
 	$mailtitle = "$bbsname($host)加入CN-BBS.ORG";
 	if(!@mail($syscfg['blogmail'], $mailtitle, $mailmsg, $mhdr))
+		cnweb_log("failed to send email to {$syscfg['blogemail']}."); 
 		$string .= "<p><font color=\"red\">警告: 送信到 " . $syscfg['blogmail'] . " 失败！</p>\n";
 
 	    //mail to news..
@@ -614,14 +619,17 @@ __EOF__;
 		fputs($fp, $mailmsg);
 		pclose($fp);
 	    }
-	    else
-		$string .= "<p><font color=\"red\">警告: 送信到 News Server 失败！</p>\n";
+	    else {
+			cnweb_log("failed to notify news server.");
+			$string .= "<p><font color=\"red\">警告: 送信到 News Server 失败！</p>\n";
+		}
 	}
 
 	if ($innsrv != $oinnsrv) { // innsrv changed...
 	    if ($oinnsrv < 0) { // 申请转信
 		if ((($oinnsrv == -1) && $innsrv > 0) || ($xmode & (_INN_PASSIVE_))) {
 		    $inntype = ($inntype == 1 ? "正式成员" : "测试成员");
+			cnweb_log("granted " . (($inntype==1)?"passive":"active") ." inn request of user {$id}.");
 		    $now = date("Y-m-d H:i:s");
 	   	    $ansi_begin = "\033[1;33m";
 		    $ansi_end = "\033[m";
@@ -679,6 +687,7 @@ __EOF__;
 		}
 		else {
 		    $inntype = ($oinnsrv == -1 ? "测试成员" : "正式成员");
+			cnweb_log("refused " . (($oinnsrv==-1)?"active":"passive") . " inn request of user {$id}.");
 		    $mailtitle = "对不起，您的" .$inntype . "申请失败了";
 		    $mailmsg = <<<__EOF__
 尊敬的$name: 您好！
@@ -753,6 +762,7 @@ __EOF__;
 	$db = new db_mysql($syscfg['mysql']);
     $db->connect();
 	$db->query("DELETE FROM _my_dns WHERE (authtime < $expire) AND !(xmode & $active)");
+	cnweb_log("removed expired({$day} days) user.");
 	$string .= "<p>成功除去 " . $db->affected_rows() . "条过期 (" . $day . ")　没激活的帐号！</p>";
 	$db->close();
     }
@@ -800,6 +810,7 @@ function sendmail(){
 	$Mail->setText($Body);
 	$Mail->send();
 	$string.="信件已经发送";
+	cnweb_log("send email to {$To}.");
 }
 
 function check_ainn() {
@@ -918,6 +929,7 @@ function check_innreq() {
 			$newgroups = addslashes($db->f("newgroups"));
 			$db->query("UPDATE _my_dns SET innhost='{$newinnhost}',innport={$newinnport},groups='{$newgroups}' WHERE name='{$username}'");
 			$db->query("UPDATE _inn_req SET agree=1 WHERE id={$agree}");
+			cnweb_log("applied user inn modification, record {$agree}.");
 		}
 	}
 	
@@ -926,6 +938,7 @@ function check_innreq() {
 	$disagree = &cgi_var('disagree');
 	if($disagree > 0) {
 		$db->query("DELETE FROM _inn_req WHERE id={$disagree}");
+		cnweb_log("canceled user inn modification, record {$disagree}.");
 	}
 	
 	$db2 = new db_mysql($syscfg['mysql']);
@@ -935,11 +948,20 @@ function check_innreq() {
 	
 	while($tmp = $db->fetch_array()) {
 		$string .= display_inn_req($tmp, $db2);
-		$string .= "<p><div align=\"center\"><a href=\"admin.php?do=check_innreq&agree={$tmp["id"]}\">批准这个申请</a> <a href=\"admin.php?do=check_innreq&disagree={$tmp["id"]}\">拒绝这个申请</a></div>";
+		$string .= "<p><div align=\"center\"><a href=\"index.php?do=check_innreq&agree={$tmp["id"]}\">批准这个申请</a> <a href=\"index.php?do=check_innreq&disagree={$tmp["id"]}\">拒绝这个申请</a></div>";
 	}
 	
 	$db2->close();
 	$db->close();
+}
+
+function cnweb_log($content) {
+	global $syscfg;
+	$fp = fopen($syscfg['logfile'], "a");
+	if($fp == NULL)
+		return;
+	fwrite($fp, date("Y-m-d H:i:s") . " {$PHP_AUTH_USER} " . $content . "\n");
+	fclose($fp);
 }
 
 ?>
