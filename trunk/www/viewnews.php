@@ -12,7 +12,8 @@
 	$result = mysql_query("SELECT * FROM _mainpage_news WHERE id=" . $id);
 	$record = mysql_fetch_array($result);
 ?>
-<div id="divMain" style="margin:20px">
+<div id="divMain">
+<div style="margin:20px">
 <?php
 	if($record) {
 		print <<<___EOF___
@@ -28,7 +29,7 @@ ___EOF___;
 	else
 		print("没有您要查看的新闻。");
 ?>
-</div>
+</div></div>
 <?php
 	mysql_close();
 	require("footer.php");
