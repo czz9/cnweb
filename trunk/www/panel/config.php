@@ -25,10 +25,9 @@ $syscfg['mysql']	= Array(
 				);
 $syscfg['email']	= "noreply@cn-bbs.org";	// admin email.
 $syscfg['blogmail']	= "";	// blog email.
-//$syscfg['url']		= "https://panel.cn-bbs.org/";
-$syscfg['url']		= "http://local.pigpark.net/web/cnweb/www/panel/";
+$syscfg['url']		= "https://panel.cn-bbs.org/";
 $syscfg['dn']		= "cn-bbs.org";
-$syscfg['logfile']	= "g:\\web\\cnweb\\www\\panel\\log";
+$syscfg['logfile']	= "/opt/www/htdocs/cnweb/tmp/log";
 
 //////////////////////////////////////////////////////////////////////
 //// 以下是管理用到的配置
