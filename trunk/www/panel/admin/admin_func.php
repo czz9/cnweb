@@ -105,7 +105,21 @@ __EOF__;
 }
 
 function adm_default() {
-    global $string;
+    global $syscfg, $string;
+	
+	$size = filesize($syscfg['logfile']);
+	$fp = fopen($syscfg['logfile'], "r");
+	$adminlog = "";
+	if($fp != NULL) {
+		if($size > 512) {
+			fseek($fp, $size - 512);
+			fgets($fp);
+		}
+		while(!feof($fp))
+			$adminlog .= fgets($fp) . "<br />\n";
+		fclose($fp);
+	}
+	
     $string .= <<<__EOF__
 	<center><font color="red">注意: </font>由于时间关系，其它方面的管理暂时没写，请配合 phpMyAdmin 来完成！</center>
 	<ul type="square">
@@ -119,7 +133,10 @@ function adm_default() {
 	<li> 新闻组服务器表是: _news_srv
 	<blockquote>host: 地址. 用 ip[:port] , 如: 166.111.4.19, 166.111.4.19:119 都是对的
 	<br>name: Server 域名，如 news.maily.cic.tsinghua.edu.cn </blockquote></li>
-	<li> 强行修改用户资料后用户通过认证，且自动激活！</li>
+	<li> 强行修改用户资料后用户通过认证，且自动激活！<br />&nbsp;</li>
+	<li> 最近管理操作记录 <br />
+	<blockquote>{$adminlog}</blockquote>
+	</li>
 	</ul>
 __EOF__;
 }
