@@ -1,6 +1,9 @@
 <?php
 	require("dbconf.php");
 	require("header.php");
+?>
+<div id="divMain">
+<?php
 	if(isset($_GET["display"])) {
 		switch($_GET["display"]) {
 			case "newsgroup":
@@ -67,5 +70,8 @@
 		}
 			mysql_close();
 	}
+?>
+</div>
+<?php
 	require("footer.php");
 ?>
