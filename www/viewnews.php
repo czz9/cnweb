@@ -29,7 +29,8 @@ ___EOF___;
 	else
 		print("没有您要查看的新闻。");
 ?>
-</div></div>
+</div>
+</div>
 <?php
 	mysql_close();
 	require("footer.php");
