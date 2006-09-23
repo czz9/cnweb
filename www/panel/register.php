@@ -2,6 +2,7 @@
 // $Id$
 
 include ("config.php");
+include ("funcs.php");
 
 $varibles = array('submit', 'name', 'email', 'host', 'mx1', 'mx2', 'ns1', 'ns2', 'bbsid', 'bbsname', 'bbsdept', 'bbsonline', 'bbslogin', 'bbsport', 'password', 'password2', 'auth');
 
@@ -81,21 +82,7 @@ if ($msg == "") {
    if($db->affected_rows() == 1) {
        $mhdr = "From: " . $syscfg['email'] . "\r\nReply-To: " . $syscfg['email'] . "\r\nX-Mailer: php program by hightman.";
        $now = date("Y-m-d H:i:s");       
-       $mailmsg = <<<__EOF__
-尊敬的$name: 您好！
-    感谢您使用 CN-BBS.ORG 域名及转信申请系统。
-
-    为确保您的电子信箱能够正常使用，您需要激活您的帐号才能接受管理员的审核。
-请您在 24 小时内登录我们的网页 $syscfg[url]/active.php 激活您的帐号，超过时
-间您必须重新注册。
-    注册时间: $now
-    激活认证码: $authcode
-
-    您也可以直接点击下面链接来激活您的帐号: 
-$syscfg[url]/active.php?name=$name&authcode=$authcode
---
-$syscfg[url]	 	   
-__EOF__;
+       $mailmsg = authcode_mail_content($name, $syscfg["url"], $now, $authcode);
 
        @mail($email, "[cn-bbs] 您的激活认证码", $mailmsg, $mhdr);
        $string = "<br><p align=\"center\"><font color=\"red\" size=\"5\"><b>申请成功！</b></font><br><br>\n"
