@@ -37,7 +37,7 @@ if (isset($name) && isset($password)) {
     else {
 	$showform = 0;
 	$string = "<br><p align=\"center\"><font color=\"red\" size=\"5\"><b>帐号尚未激活！</b></font><br><br>\n"
-	. "请查看邮箱后，点击<a href=\"active.php\">这里</a>激活！ </p>";
+	. "请查看邮箱后，点击<a href=\"active.php\">这里</a>激活！<br />&nbsp;<br />如果您没有收到激活码，请点击<a href=\"sendcode.php\">这里</a>重新发送。 </p>";
     }
 }
 
