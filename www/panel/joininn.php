@@ -126,7 +126,7 @@ else {
 
     $db->query("SELECT * FROM _news_grp WHERE type != 2 ORDER BY type");
 
-    $groups = "\t<table border=\"1\" cellspacing=\"0\">\n"
+    $groups = "\t<table align=\"center\" border=\"1\" cellspacing=\"0\">\n"
     ."\t<tr align=\"left\"><th>cn.bbs.* 新闻组名</th><th>对应的 BBS 英文版名</th></tr>\n"
     ."\t<tr><th colspan=\"2\" align=\"left\"> *** 必须转的组 *** </th></tr>\n";
 
@@ -164,7 +164,7 @@ else {
     $groups .= "\t</table>\n";
 
     $string = <<<__EOF__
-     <table border="0" width="100%" align="center" bgcolor="#efefef">
+     <table border="0" width="90%" align="center" bgcolor="#efefef">
      <tr><td colspan="2">
 	您目前的转信状态: <font style="font-size: 14px" color="red"><b>$inntype</b></font> $passive_msg
      </td></tr>
@@ -204,8 +204,8 @@ else {
 	   以下仅为 cn.bbs.* 部分，在您通过注册之后，将可以加入 4000 左右个转信组。
      </td>
      </tr>
-     <tr><td></td>
-     <td>
+     <tr>
+     <td colspan="2">
 	$groups
      </td>
      </tr>
