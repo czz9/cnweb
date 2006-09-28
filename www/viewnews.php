@@ -1,5 +1,6 @@
 <?php
 	require("dbconf.php");
+	$pagetitle = "新闻";
 	require("header.php");
 	
 	if(isset($_GET["id"]))
