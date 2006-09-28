@@ -1,51 +1,61 @@
 <?php
 	require("dbconf.php");
-	require("header.php");
-?>
-<div id="divMain">
-<?php
+	if(isset($_GET["c"]))
+		$chinese = true;
+	else if(isset($_GET["e"]))
+		$chinese = false;
+	else {
+		if(substr($_SERVER["HTTP_ACCEPT_LANGUAGE"], 0, 3) == "zh-")
+			$chinese = true;
+		else
+			$chinese = false;
+	}
 	if(isset($_GET["display"])) {
+		$isfile = false;
 		switch($_GET["display"]) {
 			case "newsgroup":
-				require(defined("STATIC_PAGE")?"newsgroup.html":"newsgroup.php");
+				$contentfile = defined("STATIC_PAGE")?"newsgroup.html":"newsgroup.php";
+				$pagetitle = "新闻组列表";
 				break;
 			case "serverlist":
-				require(defined("STATIC_PAGE")?"serverlist.html":"serverlist.php");
+				$contentfile = defined("STATIC_PAGE")?"serverlist.html":"serverlist.php";
+				$pagetitle = "服务器列表";
 				break;
 			default:
 		}
 	}
 	else if(isset($_GET["file"])) {
-?>
-<div style="margin:20px">
-<pre>
-<?php
+		$isfile = true;
 		switch($_GET["file"]) {
 			case "charter":
-				require("cndoc/CHARTER");
+				$contentfile = "cndoc/CHARTER";
+				$pagetitle = "管理章程";
 				break;
 			case "howto":
-				require("cndoc/HOWTO");
+				$contentfile = "cndoc/HOWTO";
+				$pagetitle = "技术手册";
 				break;
 			case "manual":
-				require("cndoc/MANUAL");
+				$contentfile = "cndoc/MANUAL";
+				$pagetitle = "版主手册";
 				break;
 			case "newgroup":
-				require("cndoc/NEWGROUP");
+				$contentfile = "cndoc/NEWGROUP";
+				$pagetitle = "开组须知";
 				break;
 			case "faq":
-				require("cndoc/FAQ");
+				$contentfile = "cndoc/FAQ";
+				$pagetitle = "FAQ";
 				break;
 			case "pubkey":
-				require("pubkey-cn.bbs.admin.announce");
+				$contentfile = "pubkey-cn.bbs.admin.announce";
+				$pagetitle = "PGP公钥";
 				break;
 			default:
 		}
-?>
-</pre></div>
-<?php
 	}
 	else {
+		$isfile = false;
 		mysql_connect(MYSQL_HOST, MYSQL_USERNAME, MYSQL_PASSWORD);
 		mysql_select_db(MYSQL_DB);
 		if($chinese) {
@@ -56,7 +66,7 @@
 				$mainpage_news_content .= " (" . date("Y-m-d", $record["ts_posttime"]) . ")</li>\n";
 			}
 			$mainpage_news_content .= "</ul>";
-			require("chimain.html");
+			$contentfile = "chimain.html";
 		}
 		else {
 			$result = mysql_query("SELECT * FROM _news_srv WHERE status=1 ORDER BY name ASC");
@@ -66,12 +76,17 @@
 				$server_list .= " ({$record["comment_en"]})</li>\n";
 			}
 			$server_list .= "</ul>";
-			require("engmain.html");
+			$contentfile = "engmain.html";
 		}
-			mysql_close();
+		mysql_close();
 	}
-?>
-</div>
-<?php
+	require("header.php");
+	print("<div id=\"divMain\">");
+	if($isfile)
+		print("<div style=\"margin:20px\"><pre>");
+	require($contentfile);
+	if($isfile)
+		prnt("</pre></div>");
+	print("</div>");
 	require("footer.php");
 ?>
