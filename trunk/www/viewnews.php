@@ -1,4 +1,5 @@
 <?php
+	require("config.php");
 	require("dbconf.php");
 	$pagetitle = "新闻";
 	require("header.php");
