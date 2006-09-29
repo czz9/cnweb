@@ -1,15 +1,6 @@
 <?php
+	require("config.php");
 	require("dbconf.php");
-	if(isset($_GET["c"]))
-		$chinese = true;
-	else if(isset($_GET["e"]))
-		$chinese = false;
-	else {
-		if(substr($_SERVER["HTTP_ACCEPT_LANGUAGE"], 0, 3) == "zh-")
-			$chinese = true;
-		else
-			$chinese = false;
-	}
 	if(isset($_GET["display"])) {
 		$isfile = false;
 		switch($_GET["display"]) {
@@ -49,7 +40,7 @@
 				break;
 			case "pubkey":
 				$contentfile = "pubkey-cn.bbs.admin.announce";
-				$pagetitle = "PGP公钥";
+				$pagetitle = $chinese?"PGP公钥":"PGP Public Key";
 				break;
 			default:
 		}
@@ -86,7 +77,7 @@
 		print("<div style=\"margin:20px\"><pre>");
 	require($contentfile);
 	if($isfile)
-		prnt("</pre></div>");
+		print("</pre></div>");
 	print("</div>");
 	require("footer.php");
 ?>

@@ -1,16 +1,3 @@
-<?php
-	require("config.php");
-	if(isset($_GET["c"]))
-		$chinese = true;
-	else if(isset($_GET["e"]))
-		$chinese = false;
-	else {
-		if(substr($_SERVER["HTTP_ACCEPT_LANGUAGE"], 0, 3) == "zh-")
-			$chinese = true;
-		else
-			$chinese = false;
-	}
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -20,9 +7,9 @@
 <meta name="keywords" content="cn.bbs.*,china,chinese,bbs,usenet,newsgroups" />
 <meta name="robots" content="index,follow" />
 <meta name="copyright" content="Copyright 2001-2006. cn.bbs.* Administrative Group. All Rights Reserved." />
-<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/cnbbs" />
-<title>cn.bbs.* <?php
-	print($chinese?"新闻组":"newsgroups administration");
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.cn-bbs.org/rss.php" />
+<title>cn.bbs.*<?php
+	print($chinese?"新闻组":" newsgroup");
 	print(isset($pagetitle)?" - {$pagetitle}":"");
 ?></title>
 <link href="default.css" rel="stylesheet" type="text/css" />
