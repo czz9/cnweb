@@ -6,7 +6,7 @@
 		switch($_GET["display"]) {
 			case "newsgroup":
 				$contentfile = defined("STATIC_PAGE")?"newsgroup.html":"newsgroup.php";
-				$pagetitle = "新闻组列表";
+				$pagetitle = $chinese?"新闻组列表":"Newsgroups List";
 				break;
 			case "serverlist":
 				$contentfile = defined("STATIC_PAGE")?"serverlist.html":"serverlist.php";
