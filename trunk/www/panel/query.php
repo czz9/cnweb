@@ -22,7 +22,6 @@ if (!$id) die ("Empty Input!");
 
 
 require("db_mysql.php");
-//$db = db_mysql::connect($syscfg['mysql']);
 $db = new db_mysql($syscfg['mysql']);
 $db->connect();
 
