@@ -41,7 +41,6 @@ else
     $msg = "";
 
 require ("db_mysql.php");
-// Create Mysql Class
 //$db = db_mysql::connect($syscfg['mysql']);
 $db = new db_mysql($syscfg['mysql']);
 $db->connect();
