@@ -7,7 +7,7 @@
 <meta name="keywords" content="cn.bbs.*,china,chinese,bbs,usenet,newsgroups" />
 <meta name="robots" content="index,follow" />
 <meta name="copyright" content="Copyright 2001-2006. cn.bbs.* Administrative Group. All Rights Reserved." />
-<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="href="http://feeds.feedburner.com/cnbbs" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/cnbbs" />
 <title>cn.bbs.*<?php
 	print($chinese?"新闻组":" newsgroup");
 	print(isset($pagetitle)?" - {$pagetitle}":"");
