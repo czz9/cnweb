@@ -9,7 +9,7 @@
 <meta name="copyright" content="Copyright 2001-2006. cn.bbs.* Administrative Group. All Rights Reserved." />
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/cnbbs" />
 <title>cn.bbs.*<?php
-	print($chinese?"新闻组":" newsgroup");
+	print($chinese?"新闻组":" newsgroups");
 	print(isset($pagetitle)?" - {$pagetitle}":"");
 ?></title>
 <link href="default.css" rel="stylesheet" type="text/css" />
