@@ -173,7 +173,7 @@ else {
      <ol>
      <li>本站随时欢迎全国各地 BBS 加入中国 BBS 转信(cn.bbs.*)的大家庭。</li>
      <li>转信会给版面带来一定的冲击，希望管理员在转信之前充分考虑，既能够跟众多的 BBS 交流，又能够保持自己的特色。不鼓励将所有版都纳入转信。</li>
-     <li>请阅读<a href="http://cn-bbs.org/doc/CHARTER" target="_blank">《cn.bbs.* 章程》</a>。</li>
+     <li>请阅读<a href="http://www.cn-bbs.org/index.php?c&file=charter" target="_blank">《cn.bbs.* 章程》</a>。</li>
      <li>本站保留随时终止或修改此项服务的权利。</li>
      <li>如果您已经详细阅读以上条款并完全同意，请继续申请。</li>
      </ol>
