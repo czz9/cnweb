@@ -16,12 +16,12 @@ function listnews() {
     $db2->connect();
 
     $newslist = "<table border=\"1\" cellspacing=\"0\">\n"
-    ."<tr align=\"center\"><th>服务器域名</th><th>FQDN/IP</thu><th>使用该服务器的BBS (正式成员数/所有成员数)</th><th>服务对象</th></tr>\n";
+    ."<tr align=\"center\"><th>服务器域名</th><th>FQDN/IP</th><th>端口</th><th>使用该服务器的BBS (正式成员数/所有成员数)</th><th>服务对象</th></tr>\n";
 
     $db1->query("SELECT * FROM _news_srv ORDER BY name");
     while ($db1->next_record()) {
 	if ($db1->f('url')) 
-	    $newslist .= "<tr><td><a name=\"" . $db1->f('id'). "\" href=\"" . $db1->f('url') . "\" target=\"_blank\">" . $db1->f('name') . "</a></td><td>" . $db1->f('host') . "</td>\n<td>";
+	    $newslist .= "<tr><td><a name=\"" . $db1->f('id'). "\" href=\"" . $db1->f('url') . "\" target=\"_blank\">" . $db1->f('name') . "</a></td><td>" . $db1->f('host') . "</td><td>" . $db1->f('port') . "</td>\n<td>";
 	else
 	    $newslist .= "<tr><td>" . $db1->f(name) . "</td><td>" . $db1->f(host) . "</td>\n<td>";
 	$sum = 0;
