@@ -37,7 +37,8 @@
 <ul>
 <li><a href="index.php?c&amp;display=serverlist">服务器列表</a></li>
 <li><a href="index.php?c&amp;display=newsgroup">新闻组列表</a></li>
-<li><a href="http://webnews.cn-bbs.org" target="_blank">新闻组网页版</a></li>
+<li><a href="http://webnews.cn-bbs.org/" target="_blank">新闻组网页版</a></li>
+<li><a href="http://mail.cn-bbs.org/" target="_blank">成员邮件中心</a></li>
 </ul>
 <div class="menutitle"><a href="https://panel.cn-bbs.org/">控制面板</a></div>
 <div align="center">
