@@ -92,11 +92,6 @@ if(is_login()) {
 	</ul>
 <?php
 	}
-	else {
-?>
-	<div class="menutitle"><a href="admin/index.php">进入管理界面</a></div>
-<?php
-	}
 ?>
 </div>
 <div id="divMain"><div style="margin:20px">
